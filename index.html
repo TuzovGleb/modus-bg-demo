@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Модус — Банковские гарантии для бизнеса | От 1.5 часов</title>
+<meta name="description" content="Гарантии по 44-ФЗ, 223-ФЗ, 615-ПП, валютные, таможенные, в пользу ФНС. 47 аккредитованных банков. Выдача от 1.5 часов, ставка от 1.7% годовых." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1116;
+    --ink-2:#1A1F29;
+    --paper:#F4F1EA;
+    --paper-2:#EDE8DD;
+    --line:#1f2630;
+    --line-soft:#dfd9cc;
+    --amber:#D9863A;
+    --amber-2:#B26A24;
+    --amber-soft:#F2DCB8;
+    --green:#2F7A4F;
+    --muted:#6B7280;
+    --max:#7c3aed;
+    --tg:#229ED9;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:'Manrope',sans-serif;font-size:16px;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+  .serif{font-family:'Fraunces',serif;font-weight:900;letter-spacing:-.02em;line-height:.98}
+  .mono{font-family:'JetBrains Mono',monospace}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .rule{height:1px;background:var(--line-soft)}
+
+  /* ─────── HEADER ─────── */
+  header.top{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line-soft)}
+  .top-row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;height:74px;gap:32px}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.02em;font-size:20px}
+  .brand .mark{width:34px;height:34px;background:var(--ink);color:var(--paper);border-radius:6px;display:grid;place-items:center;font-weight:900;font-family:'Fraunces',serif;font-size:20px}
+  nav.main{display:flex;gap:28px;font-size:14px;font-weight:600;color:#374151;align-items:center}
+  nav.main a:hover{color:var(--ink)}
+  nav.main > a.active{color:var(--ink);position:relative}
+  nav.main > a.active::after{content:"";position:absolute;left:0;right:0;bottom:-22px;height:2px;background:var(--amber)}
+  .nav-drop{position:relative}
+  .nav-drop-trigger{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+  .nav-drop-trigger::after{content:"▾";font-size:10px;opacity:.6}
+  .nav-drop-menu{display:none;position:absolute;top:calc(100% + 14px);left:-12px;background:var(--paper);border:1px solid var(--line-soft);min-width:200px;padding:8px 0;box-shadow:0 8px 24px rgba(14,17,22,.08);border-radius:6px;z-index:60}
+  .nav-drop:hover .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu{display:block}
+  .nav-drop-menu a{display:block;padding:10px 18px;font-size:14px;color:#374151;font-weight:600}
+  .nav-drop-menu a:hover{background:var(--paper-2);color:var(--ink)}
+  .nav-drop-menu a.active{color:var(--ink);background:var(--paper-2)}
+  .top-r{display:flex;align-items:center;gap:18px}
+  .top-phone .l{font-size:11px;color:var(--muted);text-align:right;font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase}
+  .top-phone .n{font-weight:800;font-size:17px;letter-spacing:-.01em}
+  .icon-btn{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;font-size:12px}
+  .icon-btn svg{width:18px;height:18px;fill:#fff;display:block}
+  .ic-max{background:var(--max)}
+  .ic-tg{background:var(--tg)}
+  .ic-disabled{opacity:.55;pointer-events:none;cursor:default}
+
+  /* ─────── HERO ─────── */
+  .hero{padding:56px 0 0;position:relative}
+  .hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:56px;align-items:start}
+  .hero-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+  .hero-eyebrow .dot{width:8px;height:8px;background:var(--amber);border-radius:50%;animation:pulse 2.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  h1.hero-h{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(48px,6.4vw,92px);line-height:.94;letter-spacing:-.025em;margin:0 0 32px}
+  h1.hero-h .ital{font-style:italic;font-weight:500;color:var(--amber-2)}
+  h1.hero-h .underline{position:relative;white-space:nowrap}
+  h1.hero-h .underline::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.18em;background:var(--amber);z-index:-1;opacity:.55}
+  .hero-lede{font-size:18px;line-height:1.55;color:#374151;max-width:580px;margin:0 0 36px}
+  .hero-lede strong{color:var(--ink);font-weight:700}
+
+  /* big numbers row */
+  .hero-num{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 0 28px}
+  .hero-num > div{padding:18px 0;position:relative}
+  .hero-num > div + div{padding-left:24px}
+  .hero-num > div + div::before{content:"";position:absolute;left:0;top:18px;bottom:18px;width:1px;background:var(--line-soft)}
+  .hero-num .v{font-family:'Fraunces',serif;font-weight:900;font-size:42px;line-height:1;letter-spacing:-.02em}
+  .hero-num .v .u{font-size:18px;color:var(--amber-2);font-weight:500;font-style:italic;margin-left:4px}
+  .hero-num .l{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+
+  .promise{display:flex;gap:14px;align-items:flex-start;background:#fffaf0;border:1px solid var(--amber-soft);border-left:3px solid var(--amber);border-radius:0;padding:16px 20px;margin:0 0 18px;border-radius:4px}
+  .promise .star{font-family:'Fraunces',serif;font-size:24px;color:var(--amber-2);line-height:1;margin-top:-2px}
+  .promise .t{font-size:14.5px;line-height:1.5;color:#1f2937}
+  .promise strong{font-weight:800}
+
+  .micro-row{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:13.5px;color:#374151;font-weight:500}
+  .micro-row span{display:inline-flex;align-items:center;gap:8px}
+  .micro-row .tk{color:var(--green);font-weight:900;font-size:15px}
+
+  /* hero card */
+  .quote-card{background:var(--ink);color:var(--paper);border-radius:6px;padding:36px 32px;position:relative;overflow:hidden}
+  .quote-card::before{content:"";position:absolute;top:0;right:0;width:160px;height:160px;background:radial-gradient(circle at top right, rgba(217,134,58,.18), transparent 70%);pointer-events:none}
+  .qc-eyebrow{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+  .qc-eyebrow .e{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#a8b1c2}
+  .qc-eyebrow .b{display:inline-flex;align-items:center;gap:6px;background:rgba(217,134,58,.18);color:#f4c98a;padding:5px 10px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.05em}
+  .qc-eyebrow .b .pd{width:6px;height:6px;background:#f4c98a;border-radius:50%}
+  .qc-h{font-family:'Fraunces',serif;font-weight:900;font-size:32px;line-height:1.05;letter-spacing:-.02em;margin:0 0 6px}
+  .qc-sub{color:#a8b1c2;font-size:13.5px;margin-bottom:24px}
+  .qc-form input{width:100%;background:transparent;border:0;border-bottom:1px solid #2c3340;color:var(--paper);font:inherit;font-size:15.5px;padding:14px 0;outline:none}
+  .qc-form input::placeholder{color:#7d869b}
+  .qc-form input:focus{border-bottom-color:var(--amber)}
+  .qc-cta{margin-top:22px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--amber);color:var(--ink);border:0;border-radius:4px;padding:18px 22px;font:inherit;font-weight:800;font-size:15.5px;cursor:pointer;width:100%}
+  .qc-cta:hover{background:#c97a30}
+  .qc-cta .arr{font-family:'Fraunces',serif;font-size:22px}
+  .qc-foot{margin-top:14px;font-size:11.5px;color:#7d869b;line-height:1.55}
+  .qc-foot a{color:#a8b1c2;text-decoration:underline;text-decoration-color:#3a4150}
+  .qc-alt{margin-top:20px;padding-top:20px;border-top:1px solid #2c3340}
+  .qc-alt .l{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#7d869b;margin-bottom:10px}
+  .qc-alt-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .qc-alt-btn{display:flex;align-items:center;justify-content:center;gap:8px;height:44px;border-radius:4px;color:#fff;font-weight:700;font-size:14px}
+  .qc-alt-btn svg{width:18px;height:18px;fill:#fff}
+  .alt-max{background:var(--max)}
+  .alt-tg{background:var(--tg)}
+  .alt-disabled{opacity:.55;pointer-events:none;cursor:default}
+
+  /* ─────── SECTION SHELL ─────── */
+  section.s{padding:120px 0;border-top:1px solid var(--line-soft);position:relative}
+  section.s.dark{background:var(--ink);color:var(--paper);border-top-color:var(--ink)}
+  .sec-head{display:grid;grid-template-columns:auto 1fr auto;align-items:end;gap:32px;margin-bottom:48px}
+  .sec-head .num{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.14em;color:var(--muted)}
+  .sec-head h2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(40px,5vw,68px);line-height:.96;letter-spacing:-.025em;margin:0;max-width:900px}
+  .sec-head h2 .ital{font-style:italic;font-weight:500;color:var(--amber-2)}
+  .dark .sec-head h2 .ital{color:#f0a85a}
+  .sec-head .aside{font-size:14px;color:var(--muted);max-width:280px;line-height:1.5;text-align:right;justify-self:end}
+  .dark .sec-head .num,.dark .sec-head .aside{color:#a8b1c2}
+
+  /* ─────── PAINS ─────── */
+  .pains-list{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+  .pain-row{display:grid;grid-template-columns:auto 1fr;gap:32px;padding:32px 28px;border-bottom:1px solid var(--line-soft);align-items:start}
+  .pain-row:nth-child(2n){border-left:1px solid var(--line-soft)}
+  .pain-num{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:.1em;padding-top:8px}
+  .pain-q{font-family:'Fraunces',serif;font-weight:500;font-style:italic;font-size:22px;line-height:1.25;color:var(--ink);margin:0 0 14px;letter-spacing:-.01em}
+  .pain-a{display:flex;gap:10px;align-items:flex-start;color:#1f2937;font-size:14.5px;line-height:1.55;font-weight:500}
+  .pain-a .ck{width:18px;height:18px;background:var(--green);color:#fff;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:10px;flex-shrink:0;margin-top:3px}
+
+  /* ─────── DIRECTIONS ─────── */
+  .dirs-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line-soft);background:#fff}
+  .dir{padding:36px 32px;border-right:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);position:relative;transition:background .2s}
+  .dir:hover{background:#fafaf6}
+  .dir:nth-child(3n){border-right:0}
+  .dir:nth-last-child(-n+3){border-bottom:0}
+  .dir-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.14em;margin-bottom:36px;text-transform:uppercase}
+  .dir h3{font-family:'Fraunces',serif;font-weight:900;font-size:30px;letter-spacing:-.02em;line-height:1.05;margin:0 0 12px}
+  .dir p{margin:0 0 26px;color:#374151;font-size:14.5px;line-height:1.6}
+  .dir .more{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);font-weight:600;border-bottom:1px solid var(--ink);padding-bottom:2px}
+  .dir .more::after{content:" →"}
+
+  /* ─────── COMPARE ─────── */
+  .cmp{background:#fff;border:1px solid var(--line-soft)}
+  .cmp-head{display:grid;grid-template-columns:1.2fr 1.4fr 1.4fr;background:var(--ink);color:var(--paper)}
+  .cmp-head > div{padding:22px 28px;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;border-right:1px solid #2c3340}
+  .cmp-head > div:last-child{border-right:0}
+  .cmp-head .h-us{background:var(--amber);color:var(--ink)}
+  .cmp-row{display:grid;grid-template-columns:1.2fr 1.4fr 1.4fr;border-bottom:1px solid var(--line-soft)}
+  .cmp-row:last-child{border-bottom:0}
+  .cmp-row > div{padding:18px 28px;font-size:14.5px;line-height:1.45;border-right:1px solid var(--line-soft)}
+  .cmp-row > div:last-child{border-right:0}
+  .cmp-row .lbl{font-weight:700;color:#1f2937}
+  .cmp-row .us{background:#fffaf0;color:var(--ink);font-weight:600;display:flex;gap:10px;align-items:flex-start}
+  .cmp-row .us .ck{color:var(--green);font-weight:900;flex-shrink:0;margin-top:1px}
+  .cmp-row .them{color:#7c2d2d;display:flex;gap:10px;align-items:flex-start}
+  .cmp-row .them .x{color:#b91c1c;font-weight:900;flex-shrink:0;margin-top:1px}
+  .cmp-foot{margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);letter-spacing:.06em}
+
+  /* ─────── CASES ─────── */
+  .cases-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line-soft);background:#fff}
+  .case-card{padding:36px 32px;border-right:1px solid var(--line-soft);position:relative}
+  .case-card:last-child{border-right:0}
+  .case-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+  .case-law{display:inline-block;background:var(--ink);color:var(--paper);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;padding:5px 10px;border-radius:3px;font-weight:700}
+  .case-meta{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .case-amount{font-family:'Fraunces',serif;font-weight:900;font-size:64px;line-height:1;letter-spacing:-.025em;color:var(--ink);margin-bottom:8px;display:flex;align-items:baseline;gap:10px}
+  .case-amount .cur{font-size:20px;color:var(--amber-2);font-weight:500;font-style:italic}
+  .case-type{font-size:14.5px;color:#374151;line-height:1.5;margin-bottom:18px}
+  .case-time{display:inline-flex;align-items:center;gap:8px;background:#fffaf0;border:1px solid var(--amber-soft);border-left:3px solid var(--amber);padding:8px 14px;border-radius:4px;font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:18px}
+  .case-note{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:16px;line-height:1.4;color:#1f2937}
+  .cases-foot{margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);letter-spacing:.06em;line-height:1.55}
+
+  /* ─────── CTA-STRIP ─────── */
+  .cta-strip{background:var(--paper-2);border:1px solid var(--line-soft);border-radius:6px;padding:32px 40px;display:grid;grid-template-columns:1fr 2fr;gap:32px;align-items:center}
+  .cta-strip-l h3{font-family:'Fraunces',serif;font-weight:900;font-size:28px;letter-spacing:-.02em;line-height:1.05;margin:0 0 8px}
+  .cta-strip-l p{margin:0;color:#374151;font-size:14px;line-height:1.5}
+  .cta-strip-form{display:grid;grid-template-columns:1.4fr 1fr auto;gap:10px;align-items:start}
+  .cta-strip-form input{height:52px;border:1px solid var(--line-soft);background:#fff;font:inherit;font-size:15px;padding:0 16px;border-radius:4px;color:var(--ink)}
+  .cta-strip-form input:focus{outline:2px solid var(--amber-soft);border-color:var(--amber)}
+  .cta-strip-form button{height:52px;background:var(--amber);color:var(--ink);border:0;font:inherit;font-weight:800;font-size:15px;padding:0 26px;border-radius:4px;cursor:pointer;display:flex;align-items:center;gap:10px;white-space:nowrap}
+  .cta-strip-form button:hover{background:#c97a30}
+  .cta-strip-form button .arr{font-family:'Fraunces',serif;font-size:20px}
+  .cta-strip-consent{grid-column:1/-1;font-size:11.5px;color:var(--muted);line-height:1.5;margin-top:6px}
+  .cta-strip-consent a{text-decoration:underline}
+
+  /* ─────── CALCULATOR ─────── */
+  .calc{display:grid;grid-template-columns:1fr 1fr;background:#fff;border:1px solid var(--line-soft)}
+  .calc-l{padding:48px 44px;border-right:1px solid var(--line-soft)}
+  .calc-step{margin-bottom:28px}
+  .calc-step .stl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .calc-step .sth{font-family:'Fraunces',serif;font-weight:700;font-size:20px;letter-spacing:-.01em;margin-bottom:14px}
+  .seg{display:inline-flex;border:1px solid var(--line-soft);border-radius:4px;padding:3px;background:#fafaf6}
+  .seg button{background:transparent;border:0;padding:8px 14px;border-radius:3px;font:inherit;font-size:13px;font-weight:600;color:#374151;cursor:pointer}
+  .seg button.on{background:var(--ink);color:var(--paper)}
+  .pills{display:flex;flex-wrap:wrap;gap:8px}
+  .pills button{padding:9px 16px;border:1px solid var(--line-soft);background:#fff;border-radius:4px;font:inherit;font-size:13.5px;font-weight:600;color:#374151;cursor:pointer}
+  .pills button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .calc input,.calc select{width:100%;height:52px;border:1px solid var(--line-soft);background:#fff;font:inherit;font-size:16px;padding:0 16px;border-radius:4px;color:var(--ink)}
+  .calc input:focus,.calc select:focus{outline:2px solid var(--amber-soft);border-color:var(--amber)}
+  .row2c{display:grid;grid-template-columns:1.4fr 1fr;gap:12px}
+  .calc-amt{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:8px}
+  .calc-amt input{border:0;height:auto;padding:0;font-family:'Fraunces',serif;font-weight:900;font-size:42px;letter-spacing:-.02em}
+  .calc-amt .cur{font-family:'Fraunces',serif;font-weight:500;font-style:italic;color:var(--muted);font-size:24px}
+
+  .calc-r{padding:48px 44px;background:var(--ink);color:var(--paper);display:flex;flex-direction:column}
+  .calc-r .stamp{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#a8b1c2;display:flex;align-items:center;gap:10px}
+  .calc-r .stamp::before{content:"";width:8px;height:8px;background:var(--amber);border-radius:50%}
+  .calc-r .res-lbl{margin-top:48px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#a8b1c2}
+  .calc-r .res-num{font-family:'Fraunces',serif;font-weight:900;font-size:54px;line-height:1.05;letter-spacing:-.02em;margin-top:12px}
+  .calc-r .res-num .ital{font-style:italic;font-weight:500;color:#f0a85a}
+  .calc-r .res-rate{margin-top:14px;color:#a8b1c2;font-size:14px;line-height:1.5}
+  .calc-r .res-rate strong{color:var(--paper)}
+  .calc-cta{margin-top:auto;background:var(--amber);color:var(--ink);border:0;font:inherit;font-weight:800;font-size:15.5px;height:54px;border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:0 22px}
+  .calc-cta .arr{font-family:'Fraunces',serif;font-size:22px}
+  .calc-consent{margin-top:14px;font-size:11.5px;color:#7d869b;line-height:1.55}
+  .calc-consent a{color:#a8b1c2;text-decoration:underline;text-decoration-color:#3a4150}
+
+  /* ─────── PROMO ─────── */
+  .promo{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end;background:var(--amber);color:var(--ink);padding:64px 56px;border-radius:6px;position:relative;overflow:hidden}
+  .promo::before{content:"03";position:absolute;right:-40px;top:-60px;font-family:'Fraunces',serif;font-weight:900;font-size:380px;line-height:1;color:rgba(14,17,22,.06);letter-spacing:-.04em}
+  .promo h3{font-family:'Fraunces',serif;font-weight:900;font-size:64px;line-height:.95;letter-spacing:-.025em;margin:0 0 18px;max-width:680px}
+  .promo h3 .ital{font-style:italic;font-weight:500}
+  .promo p{margin:0 0 28px;font-size:17px;line-height:1.5;max-width:600px;color:#3a2810}
+  .btn-promo{display:inline-flex;align-items:center;gap:14px;background:var(--ink);color:var(--paper);padding:18px 26px;border-radius:4px;font-weight:800;font-size:15.5px}
+  .btn-promo .arr{font-family:'Fraunces',serif;font-size:22px}
+  .promo-meta{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3a2810;writing-mode:vertical-rl;transform:rotate(180deg);position:relative;padding:16px 0;border-top:1px solid #3a2810;border-bottom:1px solid #3a2810}
+
+  /* ─────── TIMELINE ─────── */
+  .timeline{position:relative;padding-top:24px}
+  .tl-bar{height:1px;background:var(--line-soft);position:relative;margin:0 0 0;display:grid;grid-template-columns:repeat(4,1fr)}
+  .tl-tick{position:relative;border-right:1px dashed var(--line-soft)}
+  .tl-tick:last-child{border-right:0}
+  .tl-tick .dot{position:absolute;left:0;top:-7px;width:14px;height:14px;background:var(--amber);border-radius:50%;border:2px solid var(--paper)}
+  .tl-tick .time{position:absolute;left:24px;top:-30px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-2);font-weight:700;white-space:nowrap}
+  .tl-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:36px}
+  .tl-step{padding:0 24px 0 0;border-right:1px solid var(--line-soft)}
+  .tl-step:last-child{border-right:0}
+  .tl-step .n{font-family:'Fraunces',serif;font-weight:900;font-size:64px;letter-spacing:-.02em;line-height:1;color:var(--ink);margin-bottom:14px;display:flex;align-items:baseline;gap:6px}
+  .tl-step .n .of{font-size:18px;color:var(--muted);font-weight:500;font-style:italic}
+  .tl-step h4{font-family:'Fraunces',serif;font-weight:700;font-size:22px;letter-spacing:-.01em;margin:0 0 12px;line-height:1.1}
+  .tl-step p{margin:0;color:#374151;font-size:14px;line-height:1.55}
+  .tl-foot{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:56px;border:1px solid var(--ink);background:#fff}
+  .tl-foot > div{padding:28px 32px;border-right:1px solid var(--line-soft);display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start}
+  .tl-foot > div:last-child{border-right:0}
+  .tl-foot .badge{font-family:'Fraunces',serif;font-weight:900;font-size:36px;color:var(--amber-2);line-height:.9;letter-spacing:-.02em}
+  .tl-foot h5{font-family:'Fraunces',serif;font-weight:700;font-size:20px;letter-spacing:-.01em;margin:0 0 6px}
+  .tl-foot p{margin:0;color:#374151;font-size:14px;line-height:1.5}
+
+  /* ─────── DOCS ─────── */
+  .docs{display:grid;grid-template-columns:1.2fr 1fr;border:1px solid var(--line-soft);background:#fff}
+  .docs-l{padding:56px 48px;border-right:1px solid var(--line-soft)}
+  .docs-l h3{font-family:'Fraunces',serif;font-weight:900;font-size:44px;letter-spacing:-.025em;line-height:1;margin:0 0 32px}
+  .doc-row{display:grid;grid-template-columns:auto 1fr auto;gap:20px;padding:20px 0;border-bottom:1px solid var(--line-soft);align-items:center}
+  .doc-row:last-of-type{border-bottom:0}
+  .doc-row .di{font-family:'Fraunces',serif;font-weight:900;font-size:24px;color:var(--muted);width:36px}
+  .doc-row .dt{font-weight:700;font-size:17px}
+  .doc-row .dm{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+  .docs-l .note{margin-top:28px;color:#374151;font-size:14px;line-height:1.6;max-width:500px}
+  .docs-r{background:var(--ink);color:var(--paper);padding:56px 48px;display:flex;flex-direction:column;justify-content:center}
+  .docs-r .we{font-family:'Fraunces',serif;font-weight:900;letter-spacing:-.025em;line-height:.95}
+  .docs-r .we .num{font-size:140px;color:var(--amber);display:block;margin-bottom:8px}
+  .docs-r .we .lbl{font-size:32px;font-style:italic;font-weight:500}
+  .docs-r .vs{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#a8b1c2;margin:32px 0 14px;padding-top:32px;border-top:1px solid #2c3340}
+  .docs-r .them{color:#7d869b;text-decoration:line-through;font-family:'Fraunces',serif;font-size:24px;font-weight:500}
+
+  /* ─────── BANKS ─────── */
+  .banks-set{display:flex;flex-direction:column;gap:40px}
+  .banks-group .gh{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+  .banks-group .gh .gn{font-family:'Fraunces',serif;font-weight:900;font-size:28px;letter-spacing:-.02em}
+  .banks-group .gh .gs{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .banks-list{display:flex;flex-wrap:wrap;gap:8px}
+  .bank-chip{padding:10px 18px;border:1px solid var(--line-soft);background:#fff;border-radius:4px;font-weight:600;font-size:14px}
+  .bank-chip.more{border:1px solid var(--ink);background:var(--ink);color:var(--paper);font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+  .banks-foot{margin-top:36px;padding-top:24px;border-top:1px solid var(--line-soft);display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end;color:var(--muted);font-size:13px;line-height:1.55}
+  .banks-foot .src{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:right}
+
+  /* ─────── WHY DARK ─────── */
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #2c3340}
+  .why-card{padding:36px 28px;border-right:1px solid #2c3340;border-bottom:0}
+  .why-card:last-child{border-right:0}
+  .why-card .gn{font-family:'Fraunces',serif;font-weight:900;font-size:64px;letter-spacing:-.025em;line-height:1;color:var(--amber);margin-bottom:24px}
+  .why-card h4{font-family:'Fraunces',serif;font-weight:700;font-size:22px;letter-spacing:-.01em;line-height:1.1;margin:0 0 12px;color:var(--paper)}
+  .why-card p{margin:0;color:#a8b1c2;font-size:14px;line-height:1.55}
+
+  /* ─────── QUIZ + FAQ ─────── */
+  .quiz-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start}
+  .quiz-l h2{font-family:'Fraunces',serif;font-weight:900;font-size:48px;letter-spacing:-.025em;line-height:.98;margin:0 0 18px}
+  .quiz-l h2 .ital{font-style:italic;font-weight:500;color:var(--amber-2)}
+  .quiz-l p{color:#374151;font-size:16px;line-height:1.6;max-width:420px}
+  .quiz-l .meta{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:20px}
+  .quiz-card{background:#fff;border:1px solid var(--line-soft);border-radius:6px;padding:36px}
+  .quiz-head{margin-bottom:24px}
+  .quiz-step-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+  .quiz-progress{height:3px;background:var(--paper-2);border-radius:2px;overflow:hidden}
+  .quiz-progress-fill{height:100%;background:var(--amber);transition:width .35s ease}
+  .quiz-step{display:none}
+  .quiz-step.active{display:block;animation:quizFadeIn .3s ease}
+  @keyframes quizFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .quiz-q{margin-bottom:22px}
+  .quiz-q-label{font-family:'Fraunces',serif;font-weight:700;font-size:18px;letter-spacing:-.01em;margin-bottom:12px;color:var(--ink)}
+  .opts{display:flex;flex-direction:column;gap:8px}
+  .opts.opts-2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .opt{display:flex;align-items:center;gap:12px;border:1px solid var(--line-soft);background:#fafaf6;padding:14px 18px;cursor:pointer;font-weight:500;margin-bottom:0;border-radius:4px;font-size:14.5px;color:#1f2937;transition:all .15s ease;line-height:1.4}
+  .opt:hover{border-color:var(--ink);background:#fff}
+  .opt input{accent-color:var(--amber-2);flex-shrink:0}
+  .opt input:checked ~ span,.opt:has(input:checked) span{color:var(--ink)}
+  .opt:has(input:checked){border-color:var(--amber);background:#fffaf0;border-left:3px solid var(--amber);padding-left:16px}
+  .opt small{display:block;color:var(--muted);font-size:12px;font-weight:400;margin-top:2px}
+  .quiz-input-wrap{position:relative}
+  .quiz-input-wrap input{width:100%;height:52px;border:1px solid var(--line-soft);background:#fff;font:inherit;font-size:16px;padding:0 36px 0 16px;border-radius:4px;color:var(--ink);font-family:'Fraunces',serif;font-weight:700}
+  .quiz-input-wrap input:focus{outline:2px solid var(--amber-soft);border-color:var(--amber)}
+  .quiz-input-suffix{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-family:'Fraunces',serif;font-weight:500;font-style:italic;color:var(--muted);font-size:18px;pointer-events:none}
+  .quiz-card select{width:100%;height:52px;border:1px solid var(--line-soft);background:#fff;font:inherit;font-size:15px;padding:0 16px;border-radius:4px;color:var(--ink);cursor:pointer}
+  .quiz-card select:focus{outline:2px solid var(--amber-soft);border-color:var(--amber)}
+  .quiz-nav{display:grid;grid-template-columns:auto 1fr;gap:12px;margin-top:24px;padding-top:20px;border-top:1px solid var(--line-soft)}
+  .quiz-back,.quiz-next{height:52px;border:0;font:inherit;font-weight:800;font-size:14.5px;cursor:pointer;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:0 22px}
+  .quiz-back{background:var(--paper-2);color:var(--ink);border:1px solid var(--line-soft)}
+  .quiz-back:hover:not(:disabled){background:#fff;border-color:var(--ink)}
+  .quiz-back:disabled{opacity:.4;cursor:not-allowed}
+  .quiz-next{background:var(--amber);color:var(--ink)}
+  .quiz-next:hover:not(:disabled){background:#c97a30}
+  .quiz-next:disabled{opacity:.45;cursor:not-allowed}
+  .quiz-next .arr{font-family:'Fraunces',serif;font-size:20px}
+
+  /* ─── Quiz result ─── */
+  .quiz-result-head{margin-bottom:28px}
+  .quiz-result-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .quiz-result-title{font-family:'Fraunces',serif;font-weight:900;font-size:36px;letter-spacing:-.025em;line-height:1;margin:0}
+  .quiz-result-title .ital{font-style:italic;font-weight:500;color:var(--amber-2)}
+  .quiz-result-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:28px}
+  .qr-stat{padding:18px 0;position:relative}
+  .qr-stat + .qr-stat{padding-left:20px}
+  .qr-stat + .qr-stat::before{content:"";position:absolute;left:0;top:18px;bottom:18px;width:1px;background:var(--line-soft)}
+  .qr-stat-l{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .qr-stat-v{font-family:'Fraunces',serif;font-weight:900;font-size:54px;line-height:1;letter-spacing:-.02em;display:flex;align-items:baseline;gap:6px}
+  .qr-stat-v .qr-stat-unit{font-size:18px;color:var(--amber-2);font-weight:500;font-style:italic}
+  #qrStatProb.is-high .qr-stat-v{color:var(--green)}
+  #qrStatProb.is-mid .qr-stat-v{color:var(--amber-2)}
+  #qrStatProb.is-low .qr-stat-v{color:var(--ink)}
+  .quiz-result-form{display:grid;grid-template-columns:1fr 1.2fr;gap:28px;align-items:start;padding:24px;background:var(--paper-2);border-radius:6px}
+  .qr-form-l h4{font-family:'Fraunces',serif;font-weight:700;font-size:20px;letter-spacing:-.01em;margin:0 0 8px;line-height:1.15}
+  .qr-form-l p{margin:0;color:#374151;font-size:13.5px;line-height:1.5}
+  .qr-form-r{display:flex;flex-direction:column;gap:8px}
+  .qr-form-r input,.qr-form-r select{height:48px;border:1px solid var(--line-soft);background:#fff;font:inherit;font-size:14.5px;padding:0 14px;border-radius:4px;color:var(--ink)}
+  .qr-form-r input:focus,.qr-form-r select:focus{outline:2px solid var(--amber-soft);border-color:var(--amber)}
+  .qr-form-r button{height:50px;background:var(--amber);color:var(--ink);border:0;font:inherit;font-weight:800;font-size:14.5px;border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:4px}
+  .qr-form-r button:hover{background:#c97a30}
+  .qr-form-r button .arr{font-family:'Fraunces',serif;font-size:18px}
+  .qr-form-consent{font-size:11px;color:var(--muted);line-height:1.5;margin-top:6px}
+  .qr-form-consent a{text-decoration:underline}
+
+  .consent-line{font-size:11.5px;color:var(--muted);margin-top:14px;line-height:1.5}
+  .consent-line a{text-decoration:underline}
+
+  .faq-list{max-width:880px;margin:0 auto}
+  details.faq{border-top:1px solid var(--line);padding:0}
+  details.faq:last-of-type{border-bottom:1px solid var(--line)}
+  details.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:26px 0;font-family:'Fraunces',serif;font-weight:700;font-size:22px;letter-spacing:-.01em}
+  details.faq summary::-webkit-details-marker{display:none}
+  details.faq summary .pl{font-family:'JetBrains Mono',monospace;color:var(--amber-2);font-weight:700;font-size:18px;margin-left:18px;flex-shrink:0}
+  details.faq[open] summary .pl::before{content:"−"}
+  details.faq summary .pl::before{content:"+"}
+  details.faq .ans{padding:0 0 26px;color:#374151;font-size:15.5px;line-height:1.6;max-width:760px}
+
+  /* ─────── STICKY MOBILE CTA ─────── */
+  .sticky-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--paper);border-top:1px solid var(--line-soft);box-shadow:0 -6px 20px rgba(14,17,22,.08);padding:10px 14px;gap:10px;grid-template-columns:auto 1fr}
+  .sticky-cta.show{display:grid}
+  .sticky-cta a{display:flex;align-items:center;justify-content:center;gap:8px;height:48px;border-radius:4px;font-weight:800;font-size:14.5px;text-decoration:none}
+  .sticky-cta .scta-call{background:var(--ink);color:var(--paper);padding:0 18px}
+  .sticky-cta .scta-form{background:var(--amber);color:var(--ink);flex:1}
+  .sticky-cta .arr{font-family:'Fraunces',serif;font-size:18px}
+  .sticky-spacer{display:none}
+  .sticky-spacer.on{display:block;height:72px}
+
+  /* ─────── FOOTER ─────── */
+  footer.bot{background:var(--ink);color:#a8b1c2;padding:80px 0 40px;border-top:0}
+  .ftr{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:48px}
+  .ftr h5{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#7d869b;margin:0 0 16px;font-weight:600}
+  .ftr a{display:block;padding:5px 0;color:var(--paper);font-size:14.5px;font-weight:500}
+  .ftr a:hover{color:var(--amber)}
+  .ftr .brand-bot{font-family:'Fraunces',serif;font-weight:900;font-size:48px;color:var(--paper);letter-spacing:-.03em;line-height:1;margin-bottom:18px}
+  .ftr .brand-bot .ital{font-style:italic;font-weight:500;color:var(--amber)}
+  .ftr .desc{font-size:13px;line-height:1.6;color:#a8b1c2;max-width:340px}
+  .ftr .news{}
+  .ftr .news input{height:46px;background:transparent;border:1px solid #2c3340;color:var(--paper);font:inherit;padding:0 14px;width:100%;border-radius:4px}
+  .ftr .news input::placeholder{color:#7d869b}
+  .ftr .news button{margin-top:8px;height:46px;background:var(--amber);color:var(--ink);border:0;font:inherit;font-weight:800;cursor:pointer;border-radius:4px;width:100%}
+  .ftr-bot{display:flex;justify-content:space-between;border-top:1px solid #2c3340;margin-top:56px;padding-top:24px;color:#7d869b;font-size:12px}
+  .ftr-bot a{color:#7d869b;text-decoration:underline;display:inline}
+
+  @media (max-width:1100px){
+    .hero-grid,.calc,.docs,.cmp-head,.cmp-row,.dirs-grid,.tl-grid,.tl-bar,.tl-foot,.why-grid,.quiz-wrap,.ftr,.pains-list,.promo,.banks-foot,.cases-grid,.quiz-result-form{grid-template-columns:1fr 1fr}
+    .quiz-result-stats{grid-template-columns:1fr 1fr}
+    .cta-strip{grid-template-columns:1fr;gap:18px;padding:28px}
+    .cta-strip-form{grid-template-columns:1fr 1fr auto}
+    .promo h3{font-size:42px}
+  }
+  @media (max-width:760px){
+    .wrap{padding:0 22px}
+    section.s{padding:80px 0}
+    .top-row{grid-template-columns:auto auto;gap:12px}
+    nav.main{display:none}
+    .top-phone{display:none}
+    .hero-grid,.calc,.docs,.cmp-head,.cmp-row,.dirs-grid,.tl-grid,.tl-bar,.tl-foot,.why-grid,.quiz-wrap,.ftr,.pains-list,.promo,.cases-grid,.quiz-result-form,.quiz-result-stats,.opts.opts-2{grid-template-columns:1fr}
+    .quiz-card{padding:24px}
+    .qr-stat + .qr-stat{padding-left:0;border-top:1px solid var(--line-soft);padding-top:18px}
+    .qr-stat + .qr-stat::before{display:none}
+    h1.hero-h{font-size:44px}
+    .sec-head{grid-template-columns:1fr;gap:16px}
+    .sec-head .aside{text-align:left;justify-self:start}
+    .calc-l,.calc-r,.docs-l,.docs-r,.quiz-card{padding:32px 24px;border-right:0}
+    .promo{padding:40px 28px}
+    .promo h3{font-size:36px}
+    .tl-step{border-right:0;border-bottom:1px solid var(--line-soft);padding-bottom:24px;margin-bottom:24px}
+    .tl-step:last-child{border-bottom:0}
+    .tl-bar{display:none}
+    .pains-list .pain-row:nth-child(2n){border-left:0}
+    .case-card{border-right:0;border-bottom:1px solid var(--line-soft)}
+    .case-card:last-child{border-bottom:0}
+    .case-amount{font-size:48px}
+    .cta-strip{padding:24px;gap:14px}
+    .cta-strip-l h3{font-size:24px}
+    .cta-strip-form{grid-template-columns:1fr;gap:8px}
+    .cta-strip-form button{width:100%;justify-content:center}
+    .micro-row{gap:8px 14px;font-size:13px}
+    .docs-r .we .num{font-size:96px}
+    .promo::before{display:none}
+    .ftr-bot{flex-direction:column;gap:8px}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href="index.html"><span class="mark">М</span><span>Модус</span></a>
+    <nav class="main">
+      <div class="nav-drop">
+        <a href="#dirs" class="nav-drop-trigger">Направления</a>
+        <div class="nav-drop-menu">
+          <a href="medicine.html">Медицина</a>
+          <a href="stroyka.html">Стройка</a>
+          <a href="it.html">IT-сектор</a>
+          <a href="tamozhenaya.html">Таможня</a>
+        </div>
+      </div>
+      <a href="#calc">Калькулятор</a>
+      <a href="#promo">Промо</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="top-r">
+      <div class="top-phone">
+        <div class="l">Отвечаем за 15 минут</div>
+        <div class="n">8 930 818 88 98</div>
+      </div>
+      <a href="#" class="icon-btn ic-max ic-disabled" title="Max — скоро" aria-label="Max">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h2.6L12 12.4 17.4 4H20v16h-2.8V8.7L12 16.5 6.8 8.7V20H4z"/></svg>
+      </a>
+      <a href="#" class="icon-btn ic-tg ic-disabled" title="Telegram — скоро" aria-label="Telegram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.4 2.6 2.4 10.1c-.6.2-.6 1 0 1.2l4.8 1.5 1.7 5.4c.2.6.9.7 1.3.2l2.7-3 4.7 3.5c.5.4 1.2.1 1.4-.5l3.2-13.7c.2-.7-.5-1.3-1.2-1.1zM10 14.5l-.4 3.4-1.2-3.7L18 5.4 10 14.5z"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="form">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-eyebrow">
+        <span class="dot"></span>
+        <span class="eyebrow">Брокер банковских гарантий · с 2014</span>
+      </div>
+
+      <h1 class="hero-h">
+        Банковские гарантии<br>
+        для бизнеса —<br>
+        <span class="underline">от <span class="ital">1.7%</span> годовых</span>,<br>
+        выдача от <span class="ital">1.5 часов</span>
+      </h1>
+
+      <p class="hero-lede">
+        Работаем по <strong>44-ФЗ, 223-ФЗ, 615-ПП</strong> и коммерческим закупкам. <strong>Валютные, таможенные</strong> гарантии и <strong>в пользу ФНС</strong>. 47 аккредитованных банков. Без депозита, без открытия счёта, полностью онлайн.
+      </p>
+
+      <div class="hero-num">
+        <div>
+          <div class="v">12<span class="u">лет</span></div>
+          <div class="l">На рынке</div>
+        </div>
+        <div>
+          <div class="v">90<span class="u">%</span></div>
+          <div class="l">Одобряемость</div>
+        </div>
+        <div>
+          <div class="v">47<span class="u">банков</span></div>
+          <div class="l">Аккредитованных</div>
+        </div>
+      </div>
+
+      <div class="promise">
+        <span class="star">★</span>
+        <div class="t"><strong>Банковские гарантии без дополнительных условий.</strong> Принимаем оплату от третьих лиц. При наличии письменного предложения от вашего банка — сделаем дешевле.</div>
+      </div>
+
+      <div class="micro-row">
+        <span><span class="tk">✓</span> Без визита в банк</span>
+        <span><span class="tk">✓</span> Предодобрение от 3 минут</span>
+        <span><span class="tk">✓</span> Опыт исполнения не нужен</span>
+        <span><span class="tk">✓</span> Оплата от третьих лиц</span>
+      </div>
+    </div>
+
+    <aside>
+      <div class="quote-card">
+        <div class="qc-eyebrow">
+          <span class="e">Заявка · 30 сек</span>
+          <span class="b"><span class="pd"></span>Онлайн сейчас</span>
+        </div>
+        <h3 class="qc-h">Рассчитать стоимость БГ</h3>
+        <div class="qc-sub">Предодобрение от 3 минут — без передачи в банки</div>
+        <div class="qc-form">
+          <input type="text" placeholder="Ваше имя" />
+          <input type="tel" placeholder="Телефон" />
+          <input type="text" placeholder="Номер тендера (необязательно)" />
+        </div>
+        <button class="qc-cta">
+          <span>Получить расчёт</span>
+          <span class="arr">→</span>
+        </button>
+        <div class="qc-foot">
+          Нажимая кнопку, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a> и даёте <a href="personal-data-consent.html">согласие на обработку персональных данных</a>.
+        </div>
+        <div class="qc-alt">
+          <div class="l">Или напишите</div>
+          <div class="qc-alt-row">
+            <a href="#" class="qc-alt-btn alt-max alt-disabled" aria-label="Max">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h2.6L12 12.4 17.4 4H20v16h-2.8V8.7L12 16.5 6.8 8.7V20H4z"/></svg>
+              <span>Max</span>
+            </a>
+            <a href="#" class="qc-alt-btn alt-tg alt-disabled" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.4 2.6 2.4 10.1c-.6.2-.6 1 0 1.2l4.8 1.5 1.7 5.4c.2.6.9.7 1.3.2l2.7-3 4.7 3.5c.5.4 1.2.1 1.4-.5l3.2-13.7c.2-.7-.5-1.3-1.2-1.1zM10 14.5l-.4 3.4-1.2-3.7L18 5.4 10 14.5z"/></svg>
+              <span>Telegram</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- PAINS -->
+<section class="s">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">01 · Боли</div>
+      <h2>Шесть случаев, в которых <span class="ital">мы помогаем</span></h2>
+      <div class="aside">Реальные ситуации, с которыми клиенты приходят к нам. И как мы их решаем.</div>
+    </div>
+    <div class="pains-list">
+      <div class="pain-row">
+        <div class="pain-num">i.</div>
+        <div>
+          <p class="pain-q">«Банк не даёт никакой конкретики и сроков, а подача уже завтра»</p>
+          <div class="pain-a"><span class="ck">✓</span><span>Выдадим БГ от 1.5 часов — успеем даже в последний день.</span></div>
+        </div>
+      </div>
+      <div class="pain-row">
+        <div class="pain-num">ii.</div>
+        <div>
+          <p class="pain-q">«Одобрили только 50 млн, а нужно 200»</p>
+          <div class="pain-a"><span class="ck">✓</span><span>Подберём банк с нужным лимитом из 47 аккредитованных.</span></div>
+        </div>
+      </div>
+      <div class="pain-row">
+        <div class="pain-num">iii.</div>
+        <div>
+          <p class="pain-q">«Подача завтра, а БГ ещё не одобрили»</p>
+          <div class="pain-a"><span class="ck">✓</span><span>Срочный выпуск день в день — не попадёте в РНП.</span></div>
+        </div>
+      </div>
+      <div class="pain-row">
+        <div class="pain-num">iv.</div>
+        <div>
+          <p class="pain-q">«Комиссия брокеров или банка 4% — вся маржа уходит»</p>
+          <div class="pain-a"><span class="ck">✓</span><span>Стоимость БГ от 1.7% годовых.</span></div>
+        </div>
+      </div>
+      <div class="pain-row">
+        <div class="pain-num">v.</div>
+        <div>
+          <p class="pain-q">«Банк требует депозит, поручительство и открытие счёта»</p>
+          <div class="pain-a"><span class="ck">✓</span><span>Без депозита, без открытия р/с, принимаем оплату от третьих лиц.</span></div>
+        </div>
+      </div>
+      <div class="pain-row">
+        <div class="pain-num">vi.</div>
+        <div>
+          <p class="pain-q">«У нас компания меньше года — всем нужен опыт исполнения»</p>
+          <div class="pain-a"><span class="ck">✓</span><span>Опыт исполнения не нужен. Работаем с компаниями с первого дня.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIRECTIONS -->
+<section class="s" id="dirs">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">02 · Направления</div>
+      <h2>Шесть направлений работы — <span class="ital">по специфике отрасли</span></h2>
+      <div class="aside">У каждой ниши свои законы, риски и темп. Адаптируемся под них.</div>
+    </div>
+    <div class="dirs-grid">
+      <div class="dir">
+        <div class="dir-num">01 / Медицина</div>
+        <h3>Медицина</h3>
+        <p>КТРУ, ЖНВЛП, многолотовые закупки Минздрава. Гарантийные БГ на медтехнику до 10 лет.</p>
+        <a class="more" href="medicine.html">Подробнее</a>
+      </div>
+      <div class="dir">
+        <div class="dir-num">02 / Стройка</div>
+        <h3>Стройка</h3>
+        <p>44-ФЗ, 223-ФЗ, 615-ПП. Крупные контракты, авансирование, подряды.</p>
+        <a class="more" href="stroyka.html">Подробнее</a>
+      </div>
+      <div class="dir">
+        <div class="dir-num">03 / IT</div>
+        <h3>IT-сектор</h3>
+        <p>SaaS, аутсорсинг, внедрение ERP. БГ без залога и материальных активов.</p>
+        <a class="more" href="it.html">Подробнее</a>
+      </div>
+      <div class="dir">
+        <div class="dir-num">04 / Валюта</div>
+        <h3>Валютные закупки</h3>
+        <p>БГ для импортных контрактов и валютных тендеров. Работаем с банками-агентами валютного контроля.</p>
+        <a class="more">Подробнее</a>
+      </div>
+      <div class="dir">
+        <div class="dir-num">05 / ВЭД</div>
+        <h3>Таможенные гарантии</h3>
+        <p>Обеспечение уплаты таможенных платежей. БГ для участников ВЭД и таможенных представителей.</p>
+        <a class="more" href="tamozhenaya.html">Подробнее</a>
+      </div>
+      <div class="dir">
+        <div class="dir-num">06 / ФНС</div>
+        <h3>В пользу ФНС</h3>
+        <p>Обеспечение уплаты НДС, акцизов, возмещения. Принимаем оплату от третьих лиц.</p>
+        <a class="more">Подробнее</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="s">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">03 · Сравнение</div>
+      <h2>Брокер Модус <span class="ital">vs</span> прямое обращение в банк</h2>
+      <div class="aside">Семь ключевых параметров — без иконок там, где сравнение числовое.</div>
+    </div>
+    <div class="cmp">
+      <div class="cmp-head">
+        <div>Параметр</div>
+        <div class="h-us">Брокер Модус</div>
+        <div>Традиционный банк</div>
+      </div>
+      <div class="cmp-row">
+        <div class="lbl">Возраст компании</div>
+        <div class="us"><span>от 1 дня регистрации</span></div>
+        <div class="them"><span>от 6 месяцев регистрации</span></div>
+      </div>
+      <div class="cmp-row">
+        <div class="lbl">Опыт исполнения контрактов</div>
+        <div class="us"><span class="ck">✓</span><span>Не требуется</span></div>
+        <div class="them"><span class="x">✗</span><span>Требуется (1+ исполненный контракт)</span></div>
+      </div>
+      <div class="cmp-row">
+        <div class="lbl">Депозит / залог</div>
+        <div class="us"><span class="ck">✓</span><span>Без депозита</span></div>
+        <div class="them"><span class="x">✗</span><span>Часто требуется или блокировка средств</span></div>
+      </div>
+      <div class="cmp-row">
+        <div class="lbl">Оплата от третьих лиц</div>
+        <div class="us"><span>Да</span></div>
+        <div class="them"><span>Как правило, нет</span></div>
+      </div>
+      <div class="cmp-row">
+        <div class="lbl">Количество банков</div>
+        <div class="us"><span class="ck">✓</span><span>47 аккредитованных</span></div>
+        <div class="them"><span class="x">✗</span><span>1</span></div>
+      </div>
+      <div class="cmp-row">
+        <div class="lbl">Вероятность одобрения</div>
+        <div class="us"><span>до 90%</span></div>
+        <div class="them"><span>30–50%</span></div>
+      </div>
+      <div class="cmp-row">
+        <div class="lbl">Присутствие в офисе</div>
+        <div class="us"><span class="ck">✓</span><span>Онлайн, без визита</span></div>
+        <div class="them"><span class="x">✗</span><span>Визит в отделение банка</span></div>
+      </div>
+    </div>
+    <div class="cmp-foot">Сравнение усреднённое; условия зависят от банка и типа сделки.</div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section class="s" id="cases">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">04 · Кейсы</div>
+      <h2>Свежие выдачи — <span class="ital">три недавних кейса</span></h2>
+      <div class="aside">Без названий компаний. Реальные суммы и сроки выпуска.</div>
+    </div>
+    <div class="cases-grid">
+      <div class="case-card">
+        <div class="case-eyebrow">
+          <span class="case-law">44-ФЗ</span>
+          <span class="case-meta">Строительный подряд</span>
+        </div>
+        <div class="case-amount">37<span class="cur">млн ₽</span></div>
+        <div class="case-type">Региональный заказчик. Компания обратилась впервые.</div>
+        <div class="case-time">⚡ Выдано за 3 часа</div>
+        <div class="case-note">«Без опыта исполнения контрактов»</div>
+      </div>
+      <div class="case-card">
+        <div class="case-eyebrow">
+          <span class="case-law">223-ФЗ</span>
+          <span class="case-meta">Поставка оборудования</span>
+        </div>
+        <div class="case-amount">13<span class="cur">млн ₽</span></div>
+        <div class="case-type">Заявка прошла после отказа двух банков клиента.</div>
+        <div class="case-time">⚡ Выдано за 2 часа</div>
+        <div class="case-note">«После отказа двух банков»</div>
+      </div>
+      <div class="case-card">
+        <div class="case-eyebrow">
+          <span class="case-law">615-ПП</span>
+          <span class="case-meta">Капитальный ремонт</span>
+        </div>
+        <div class="case-amount">2.5<span class="cur">млн ₽</span></div>
+        <div class="case-type">Оплата принята от третьего лица.</div>
+        <div class="case-time">⚡ Выдано за 1.5 часа</div>
+        <div class="case-note">«Оплата от третьего лица»</div>
+      </div>
+    </div>
+    <div class="cases-foot">Данные обезличены в соответствии с условиями NDA. Полный реестр выпущенных БГ доступен по запросу.</div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section class="s" style="padding-top:0;border-top:0">
+  <div class="wrap">
+    <div class="cta-strip">
+      <div class="cta-strip-l">
+        <h3>Получить точный расчёт за 15 минут</h3>
+        <p>Оставьте телефон и сумму БГ — пришлём расчёт по вашему тендеру в Telegram или Max.</p>
+      </div>
+      <form class="cta-strip-form" onsubmit="event.preventDefault();alert('Заявка отправлена')">
+        <input type="tel" placeholder="Телефон" required />
+        <input type="number" placeholder="Сумма БГ, ₽" required />
+        <button type="submit">Получить расчёт <span class="arr">→</span></button>
+        <div class="cta-strip-consent">Нажимая кнопку, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a> и даёте <a href="personal-data-consent.html">согласие на обработку персональных данных</a>.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="s" id="calc">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">05 · Калькулятор</div>
+      <h2>Получите <span class="ital">диапазон стоимости</span> за 1 минуту</h2>
+      <div class="aside">Расчёт по реальным ставкам банков-партнёров.</div>
+    </div>
+
+    <div class="calc">
+      <div class="calc-l">
+        <div class="calc-step">
+          <div class="stl">01 · Закон</div>
+          <div class="pills" id="lawPills">
+            <button class="on" data-law="44">44-ФЗ</button>
+            <button data-law="223">223-ФЗ</button>
+            <button data-law="615">615-ПП</button>
+            <button data-law="comm">Коммерция</button>
+          </div>
+        </div>
+
+        <div class="calc-step">
+          <div class="stl">02 · Тип БГ</div>
+          <select id="type">
+            <option>На участие</option>
+            <option>Исполнение контракта</option>
+            <option>Гарантийные обязательства</option>
+          </select>
+        </div>
+
+        <div class="calc-step">
+          <div class="stl">03 · Сумма</div>
+          <div class="seg" style="margin-bottom:14px">
+            <button id="modeSum" class="on" onclick="setMode('sum')">Сумма БГ</button>
+            <button id="modeNmck" onclick="setMode('nmck')">Размер тендера + %</button>
+          </div>
+          <div id="boxSum">
+            <div class="calc-amt">
+              <input type="text" inputmode="numeric" id="amount" value="5 000 000" autocomplete="off" />
+              <span class="cur">₽</span>
+            </div>
+            <div style="font-size:12px;color:var(--muted);margin-top:8px;font-family:'JetBrains Mono',monospace;letter-spacing:.06em">от 100 тыс. до 250 млн</div>
+          </div>
+          <div id="boxNmck" style="display:none">
+            <div class="row2c">
+              <div>
+                <div style="font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px">НМЦК, ₽</div>
+                <input type="text" inputmode="numeric" id="nmck" value="100 000 000" autocomplete="off" />
+              </div>
+              <div>
+                <div style="font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px">% обеспечения</div>
+                <input type="number" id="pct" value="5" step="0.1" />
+              </div>
+            </div>
+            <div style="font-size:13.5px;color:#374151;margin-top:12px">Сумма БГ: <strong id="nmckCalc">5 000 000 ₽</strong> · обычно 0.5–5% по 44-ФЗ</div>
+          </div>
+        </div>
+
+        <div class="calc-step">
+          <div class="stl">04 · Срок</div>
+          <input type="number" id="days" value="30" />
+          <div style="font-size:12px;color:var(--muted);margin-top:8px;font-family:'JetBrains Mono',monospace;letter-spacing:.06em">дней</div>
+        </div>
+      </div>
+
+      <div class="calc-r">
+        <div class="stamp">Расчёт обновляется автоматически</div>
+        <div>
+          <div class="res-lbl">К оплате</div>
+          <div class="res-num"><span id="resRange">от 6 986 ₽ <span class="ital">до</span> 10 274 ₽</span></div>
+          <div class="res-rate" id="resRate"><strong>1.7%–2.5%</strong> годовых · 44-ФЗ</div>
+        </div>
+        <button class="calc-cta">
+          <span>Запросить точный расчёт</span>
+          <span class="arr">→</span>
+        </button>
+        <div class="calc-consent">Нажимая кнопку, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a> и даёте <a href="personal-data-consent.html">согласие на обработку персональных данных</a>.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMO -->
+<section class="s" id="promo" style="padding-top:60px">
+  <div class="wrap">
+    <div class="promo">
+      <div>
+        <div class="eyebrow" style="color:#3a2810;margin-bottom:18px">Действующая акция</div>
+        <h3>Три БГ на участие — <span class="ital">даром</span></h3>
+        <p>Оплачиваем комиссию банка за выдачу БГ на участие для первых 3 гарантий. Вы не платите ничего. Идеально для первого выхода на госзакупки или для компаний с небольшими тендерами.</p>
+        <a class="btn-promo">
+          <span>Забрать 3 бесплатные гарантии</span>
+          <span class="arr">→</span>
+        </a>
+      </div>
+      <div class="promo-meta">3 / 3 free</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="s">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">06 · Этапы</div>
+      <h2>Как мы работаем — <span class="ital">от заявки до реестра</span></h2>
+      <div class="aside">Полный цикл — от 1.5 часов при готовом пакете документов.</div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-bar">
+        <div class="tl-tick">
+          <div class="dot"></div>
+          <div class="time">00:00 · ЗАЯВКА</div>
+        </div>
+        <div class="tl-tick">
+          <div class="dot"></div>
+          <div class="time">+3 МИН · ПРЕДОДОБРЕНИЕ</div>
+        </div>
+        <div class="tl-tick">
+          <div class="dot"></div>
+          <div class="time">+1 Ч · СОГЛАСОВАНИЕ</div>
+        </div>
+        <div class="tl-tick">
+          <div class="dot"></div>
+          <div class="time">+1.5 Ч · РЕЕСТР</div>
+        </div>
+      </div>
+
+      <div class="tl-grid">
+        <div class="tl-step">
+          <div class="n">01<span class="of"></span></div>
+          <h4>Заявка и аудит</h4>
+          <p>Получаем данные по тендеру (номер или ссылку). Проверяем требования заказчика, специфику контракта и документации. Озвучиваем предварительную стоимость.</p>
+        </div>
+        <div class="tl-step">
+          <div class="n">02</div>
+          <h4>Подбор банка</h4>
+          <p>Анализируем финансовое состояние вашей компании и подаём заявку сразу в 47 аккредитованных банков. Подбираем лучшие условия по ставке и скорости.</p>
+        </div>
+        <div class="tl-step">
+          <div class="n">03</div>
+          <h4>Одобрение</h4>
+          <p>Согласовываем макет гарантии с вами и заказчиком. Снимаем все разногласия по формулировкам. После предоставления документов и подписания заявки — выдаём проект БГ и счёт.</p>
+        </div>
+        <div class="tl-step">
+          <div class="n">04</div>
+          <h4>Выпуск</h4>
+          <p>Вы подписываете договор в ЭДО, оплачиваете комиссию банку. БГ попадает в реестр. Готово — контракт можно подписывать.</p>
+        </div>
+      </div>
+
+      <div class="tl-foot">
+        <div>
+          <div class="badge">①</div>
+          <div>
+            <h5>Оплачиваете комиссию ТОЛЬКО банку</h5>
+            <p>Никакой дополнительной комиссии Модус. Цена для вас — ровно та, что выставил банк.</p>
+          </div>
+        </div>
+        <div>
+          <div class="badge">②</div>
+          <div>
+            <h5>БГ размещается в реестре</h5>
+            <p>Официальный реестр банковских гарантий — заказчик видит выпуск онлайн.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCS -->
+<section class="s">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">07 · Документы</div>
+      <h2><span class="ital">Два</span> документа вместо <span class="ital">пятнадцати</span></h2>
+      <div class="aside">Ничего лишнего: только то, что действительно нужно банку.</div>
+    </div>
+    <div class="docs">
+      <div class="docs-l">
+        <h3>Что нужно от вас</h3>
+        <div class="doc-row">
+          <div class="di">01</div>
+          <div class="dt">Паспорт руководителя и учредителей</div>
+          <div class="dm">PDF / JPG</div>
+        </div>
+        <div class="doc-row">
+          <div class="di">02</div>
+          <div class="dt">Карточка компании</div>
+          <div class="dm">PDF / DOCX</div>
+        </div>
+        <div class="note">Не требуется аудиторское заключение, бухгалтерская отчётность или иная «тяжёлая» документация. Полностью электронное подписание через ЭДО. Принимаем оплату от третьих лиц.</div>
+      </div>
+      <div class="docs-r">
+        <div class="we">
+          <span class="num">2</span>
+          <span class="lbl">документа от вас</span>
+        </div>
+        <div class="vs">VS</div>
+        <div class="them">15–20 документов в банке</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BANKS -->
+<section class="s">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">08 · Банки</div>
+      <h2>Мы работаем с <span class="ital">47 аккредитованными</span> банками</h2>
+      <div class="aside">Группировка по рейтингу banki.ru по активам.</div>
+    </div>
+    <div class="banks-set">
+      <div class="banks-group">
+        <div class="gh"><span class="gn">Топ-10</span><span class="gs">по активам · banki.ru</span></div>
+        <div class="banks-list">
+          <span class="bank-chip">Сбер</span>
+          <span class="bank-chip">ВТБ</span>
+          <span class="bank-chip">Газпромбанк</span>
+          <span class="bank-chip">Альфа-Банк</span>
+          <span class="bank-chip">Т-Банк</span>
+          <span class="bank-chip">Совкомбанк</span>
+          <span class="bank-chip">Промсвязьбанк</span>
+          <span class="bank-chip">Банк «Открытие»</span>
+          <span class="bank-chip">Райффайзенбанк</span>
+          <span class="bank-chip">Московский Кредитный Банк</span>
+        </div>
+      </div>
+      <div class="banks-group">
+        <div class="gh"><span class="gn">Топ-50</span><span class="gs">по активам · banki.ru</span></div>
+        <div class="banks-list">
+          <span class="bank-chip">Уралсиб</span>
+          <span class="bank-chip">Ак Барс</span>
+          <span class="bank-chip">Банк «Санкт-Петербург»</span>
+          <span class="bank-chip">Абсолют Банк</span>
+          <span class="bank-chip">Зенит</span>
+          <span class="bank-chip">МТС-Банк</span>
+          <span class="bank-chip">ОТП Банк</span>
+          <span class="bank-chip">Банк «Левобережный»</span>
+          <span class="bank-chip">СДМ-Банк</span>
+          <span class="bank-chip">Россия</span>
+        </div>
+      </div>
+      <div class="banks-group">
+        <div class="gh"><span class="gn">Прочие</span><span class="gs">партнёры</span></div>
+        <div class="banks-list">
+          <span class="bank-chip">Реалист Банк</span>
+          <span class="bank-chip">Металлинвестбанк</span>
+          <span class="bank-chip">Энергобанк</span>
+          <span class="bank-chip">Банк «Авангард»</span>
+          <span class="bank-chip">Кубань Кредит</span>
+          <span class="bank-chip">Тимер Банк</span>
+          <span class="bank-chip more">+ ещё 21 банк</span>
+        </div>
+      </div>
+    </div>
+    <div class="banks-foot">
+      <div>Все банки входят в Перечень, одобренный Минфином России. Также работаем с банками, аккредитованными Росатомом, Россетями, Лукойлом, Газпромом и другими крупными структурами.</div>
+      <div class="src">Актуально на 05.2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY DARK -->
+<section class="s dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">09 · Надёжность</div>
+      <h2>Почему с нами <span class="ital">надёжно работать</span></h2>
+      <div class="aside">12 лет, 47 банков, тысячи выпущенных БГ.</div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="gn">47</div>
+        <h4>Аккредитованных банков</h4>
+        <p>Подберём лучшие условия из 47 аккредитованных банков. Все банки входят в Перечень Минфина России.</p>
+      </div>
+      <div class="why-card">
+        <div class="gn">12</div>
+        <h4>Лет на рынке</h4>
+        <p>Работаем с 2014 года. Оформили тысячи банковских гарантий для компаний любого размера.</p>
+      </div>
+      <div class="why-card">
+        <div class="gn">100<span style="font-size:32px">%</span></div>
+        <h4>Полностью онлайн</h4>
+        <p>Все документы подписываются через ЭДО. Не нужно ехать в банк или отправлять оригиналы почтой.</p>
+      </div>
+      <div class="why-card">
+        <div class="gn">0</div>
+        <h4>Срывов срока подачи</h4>
+        <p>Гарантируем выпуск БГ к сроку подачи. При отказе одного банка моментально перебрасываем заявку в следующий из 47 аккредитованных. Срок подачи в тендер не сдвигается.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="s" id="quiz">
+  <div class="wrap">
+    <div class="quiz-wrap">
+      <div class="quiz-l">
+        <div class="eyebrow" style="margin-bottom:18px">10 · Опрос</div>
+        <h2>Пройдите короткий опрос для <span class="ital">предварительного решения</span></h2>
+        <p>Без передачи данных в банки. На основе ответов даём предварительный диапазон ставки и список банков, которые с высокой вероятностью одобрят вашу заявку.</p>
+        <div class="meta">Точность оценки · 95% · 4 шага · ~1 минута</div>
+      </div>
+
+      <div class="quiz-card" id="quizCard">
+        <div class="quiz-head">
+          <div class="quiz-step-label" id="quizStepLabel">Шаг 1 из 4 · Параметры гарантии</div>
+          <div class="quiz-progress"><div class="quiz-progress-fill" id="quizProgress" style="width:25%"></div></div>
+        </div>
+
+        <!-- STEP 1 -->
+        <div class="quiz-step active" data-step="1">
+          <div class="quiz-q">
+            <div class="quiz-q-label">По какому закону?</div>
+            <div class="opts" data-field="law" data-required="1">
+              <label class="opt"><input type="radio" name="law" value="44"/><span>44-ФЗ</span></label>
+              <label class="opt"><input type="radio" name="law" value="223"/><span>223-ФЗ</span></label>
+              <label class="opt"><input type="radio" name="law" value="615"/><span>615-ПП</span></label>
+              <label class="opt"><input type="radio" name="law" value="comm"/><span>Коммерческие закупки</span></label>
+            </div>
+          </div>
+          <div class="quiz-q">
+            <div class="quiz-q-label">Сумма гарантии</div>
+            <div class="quiz-input-wrap"><input type="text" inputmode="numeric" id="quizSum" placeholder="Например, 5 000 000" autocomplete="off" data-required="1" /><span class="quiz-input-suffix">₽</span></div>
+          </div>
+          <div class="quiz-q">
+            <div class="quiz-q-label">Срочность</div>
+            <div class="opts opts-2" data-field="urgency" data-required="1">
+              <label class="opt"><input type="radio" name="urgency" value="hot"/><span>🔥 Горит — сегодня/завтра</span></label>
+              <label class="opt"><input type="radio" name="urgency" value="planned"/><span>Планово — 2–3 дня</span></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="quiz-step" data-step="2">
+          <div class="quiz-q">
+            <div class="quiz-q-label">Возраст компании</div>
+            <div class="opts" data-field="age" data-required="1">
+              <label class="opt"><input type="radio" name="age" value="lt6"/><span>Менее 6 месяцев</span></label>
+              <label class="opt"><input type="radio" name="age" value="6m1y"/><span>От 6 месяцев до 1 года</span></label>
+              <label class="opt"><input type="radio" name="age" value="gt1"/><span>Более 1 года</span></label>
+            </div>
+          </div>
+          <div class="quiz-q">
+            <div class="quiz-q-label">Примерная выручка за прошлый год</div>
+            <select id="quizRevenue" data-field="revenue" data-required="1">
+              <option value="">Выберите диапазон…</option>
+              <option value="lt10">До 10 млн ₽</option>
+              <option value="10-50">10–50 млн ₽</option>
+              <option value="50-200">50–200 млн ₽</option>
+              <option value="200-1000">200 млн – 1 млрд ₽</option>
+              <option value="gt1000">Более 1 млрд ₽</option>
+            </select>
+          </div>
+          <div class="quiz-q">
+            <div class="quiz-q-label">Закрыли год с прибылью?</div>
+            <div class="opts" data-field="profit" data-required="1">
+              <label class="opt"><input type="radio" name="profit" value="yes"/><span>Да, с прибылью</span></label>
+              <label class="opt"><input type="radio" name="profit" value="zero"/><span>Около нуля</span></label>
+              <label class="opt"><input type="radio" name="profit" value="loss"/><span>Убыток</span></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="quiz-step" data-step="3">
+          <div class="quiz-q">
+            <div class="quiz-q-label">Опыт исполнения аналогичных контрактов</div>
+            <div class="opts" data-field="experience" data-required="1">
+              <label class="opt"><input type="radio" name="experience" value="3plus"/><span>Более 3 контрактов</span></label>
+              <label class="opt"><input type="radio" name="experience" value="1-2"/><span>1–2 контракта</span></label>
+              <label class="opt"><input type="radio" name="experience" value="none"/><span>Нет опыта <small>— ничего, мы работаем с компаниями с 1-го дня</small></span></label>
+            </div>
+          </div>
+          <div class="quiz-q">
+            <div class="quiz-q-label">Были ли отказы в банках за последние 6 месяцев?</div>
+            <div class="opts" data-field="refusals" data-required="1">
+              <label class="opt"><input type="radio" name="refusals" value="none"/><span>Нет</span></label>
+              <label class="opt"><input type="radio" name="refusals" value="1-2"/><span>Да, 1–2 банка</span></label>
+              <label class="opt"><input type="radio" name="refusals" value="many"/><span>Много отказов</span></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="quiz-step" data-step="4">
+          <div class="quiz-q">
+            <div class="quiz-q-label">Есть ли блокировки по счетам или суды как у ответчика?</div>
+            <div class="opts" data-field="redflags" data-required="1">
+              <label class="opt"><input type="radio" name="redflags" value="none"/><span>Нет</span></label>
+              <label class="opt"><input type="radio" name="redflags" value="minor"/><span>Мелкие хозяйственные суды</span></label>
+              <label class="opt"><input type="radio" name="redflags" value="major"/><span>Есть блокировки или крупные суды</span></label>
+            </div>
+          </div>
+          <div class="quiz-q">
+            <div class="quiz-q-label">Нужна ли возможность оплаты от третьего лица?</div>
+            <div class="opts opts-2" data-field="thirdparty" data-required="1">
+              <label class="opt"><input type="radio" name="thirdparty" value="no"/><span>Нет, платим сами</span></label>
+              <label class="opt"><input type="radio" name="thirdparty" value="yes"/><span>Да, от третьего лица</span></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- RESULT -->
+        <div class="quiz-step quiz-result" data-step="result">
+          <div class="quiz-result-head">
+            <div class="quiz-result-eyebrow">Результат предварительного аудита</div>
+            <h3 class="quiz-result-title">Ваш расчёт <span class="ital">готов</span></h3>
+          </div>
+          <div class="quiz-result-stats">
+            <div class="qr-stat" id="qrStatProb">
+              <div class="qr-stat-l">Вероятность одобрения</div>
+              <div class="qr-stat-v"><span id="qrProb">90</span><span class="qr-stat-unit">%</span></div>
+            </div>
+            <div class="qr-stat">
+              <div class="qr-stat-l">Готовых к выдаче банков</div>
+              <div class="qr-stat-v"><span id="qrBanks">47</span><span class="qr-stat-unit">из 47</span></div>
+            </div>
+            <div class="qr-stat">
+              <div class="qr-stat-l">Ориентировочная ставка</div>
+              <div class="qr-stat-v" style="font-size:36px"><span id="qrRate">1.7%–2.5%</span></div>
+            </div>
+          </div>
+          <div class="quiz-result-form">
+            <div class="qr-form-l">
+              <h4>Куда прислать подборку банков со ставками?</h4>
+              <p>Отправим список банков-партнёров с условиями под ваш кейс — в Telegram или Max в течение 15 минут.</p>
+            </div>
+            <form class="qr-form-r" onsubmit="event.preventDefault();alert('Подборка отправлена')">
+              <input type="text" placeholder="Имя" required />
+              <input type="tel" placeholder="Телефон" required />
+              <select name="contact">
+                <option value="call">Позвонить мне</option>
+                <option value="tg">Написать в Telegram</option>
+                <option value="max">Написать в Max</option>
+              </select>
+              <button type="submit">Получить подборку <span class="arr">→</span></button>
+              <div class="qr-form-consent">Нажимая кнопку, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a> и даёте <a href="personal-data-consent.html">согласие на обработку персональных данных</a>.</div>
+            </form>
+          </div>
+        </div>
+
+        <div class="quiz-nav">
+          <button class="quiz-back" id="quizBack" type="button">← Назад</button>
+          <button class="quiz-next" id="quizNext" type="button" disabled>Далее <span class="arr">→</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="s" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">11 · FAQ</div>
+      <h2>Часто задаваемые <span class="ital">вопросы</span></h2>
+      <div class="aside">Не нашли ответ — напишите в Max или Telegram.</div>
+    </div>
+    <div class="faq-list">
+      <details class="faq" open>
+        <summary><span>Сколько стоят услуги Модуса?</span><span class="pl"></span></summary>
+        <div class="ans">Вы оплачиваете комиссию ТОЛЬКО банку. Никакой дополнительной комиссии Модус нет. Стоимость БГ — от 1.7% годовых.</div>
+      </details>
+      <details class="faq">
+        <summary><span>Выдаётся ли гарантия без открытия расчётного счёта?</span><span class="pl"></span></summary>
+        <div class="ans">Да. Работаем с банками, которые не требуют открытия р/с. Принимаем оплату от третьих лиц.</div>
+      </details>
+      <details class="faq">
+        <summary><span>Работаете ли вы с ИП и молодыми компаниями?</span><span class="pl"></span></summary>
+        <div class="ans">Да. Работаем с компаниями от 1 дня. Опыт исполнения контрактов не требуется.</div>
+      </details>
+      <details class="faq">
+        <summary><span>По каким законам вы работаете?</span><span class="pl"></span></summary>
+        <div class="ans">44-ФЗ, 223-ФЗ, 615-ПП и коммерческие закупки. Также — валютные закупки, таможенные гарантии и гарантии в пользу ФНС.</div>
+      </details>
+      <details class="faq">
+        <summary><span>А если у меня уже есть предложение от моего банка?</span><span class="pl"></span></summary>
+        <div class="ans">При наличии конкретного письменного предложения от вашего банка — сделаем дешевле.</div>
+      </details>
+      <details class="faq">
+        <summary><span>Чем вы отличаетесь от других брокеров?</span><span class="pl"></span></summary>
+        <div class="ans">Оплата только банку (без комиссии Модус), 47 аккредитованных банков в одной заявке, выдача от 1.5 часов, предодобрение от 3 минут, принимаем оплату от третьих лиц.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="tel:+79308188898" class="scta-call" aria-label="Позвонить">
+    <span>📞</span><span>Позвонить</span>
+  </a>
+  <a href="#form" class="scta-form" aria-label="Запросить расчёт">
+    <span>Запросить расчёт</span><span class="arr">→</span>
+  </a>
+</div>
+<div class="sticky-spacer" id="stickySpacer"></div>
+
+<!-- FOOTER -->
+<footer class="bot">
+  <div class="wrap ftr">
+    <div>
+      <div class="brand-bot">М<span class="ital">одус</span></div>
+      <div class="desc">Брокер банковских гарантий. 12 лет на рынке. Работаем с 47 аккредитованными банками. Выдача БГ от 1.5 часов. Принимаем оплату от третьих лиц.</div>
+    </div>
+    <div>
+      <h5>Направления</h5>
+      <a href="medicine.html">Медицина</a>
+      <a href="stroyka.html">Стройка</a>
+      <a href="it.html">IT-сектор</a>
+      <a href="tamozhenaya.html">Таможенные гарантии</a>
+    </div>
+    <div>
+      <h5>Контакты</h5>
+      <a href="tel:+79308188898" style="font-weight:800;font-size:18px;color:var(--paper)">8 930 818 88 98</a>
+      <a href="mailto:modus@modusbg-nn.ru">modus@modusbg-nn.ru</a>
+      <div style="display:flex;gap:8px;margin-top:14px">
+        <a href="#" class="icon-btn ic-max ic-disabled" title="Max — скоро" aria-label="Max">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h2.6L12 12.4 17.4 4H20v16h-2.8V8.7L12 16.5 6.8 8.7V20H4z"/></svg>
+        </a>
+        <a href="#" class="icon-btn ic-tg ic-disabled" title="Telegram — скоро" aria-label="Telegram">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.4 2.6 2.4 10.1c-.6.2-.6 1 0 1.2l4.8 1.5 1.7 5.4c.2.6.9.7 1.3.2l2.7-3 4.7 3.5c.5.4 1.2.1 1.4-.5l3.2-13.7c.2-.7-.5-1.3-1.2-1.1zM10 14.5l-.4 3.4-1.2-3.7L18 5.4 10 14.5z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="news">
+      <h5>Чек-лист в подарок</h5>
+      <div style="font-size:13.5px;line-height:1.55;color:#a8b1c2;margin-bottom:14px">Как подготовить компанию, чтобы банк одобрил БГ за 1.5 часа.</div>
+      <input type="email" placeholder="email"/>
+      <button>Скачать чек-лист</button>
+      <div style="font-size:11px;color:#7d869b;margin-top:10px;line-height:1.5">Нажимая «Скачать», вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a> и даёте <a href="personal-data-consent.html">согласие на обработку персональных данных</a>.</div>
+    </div>
+  </div>
+  <div class="wrap ftr-bot">
+    <div>© 2014–2026 Модус · Все права защищены</div>
+    <div><a href="privacy.html">Политика конфиденциальности</a> · <a href="personal-data-consent.html">Согласие на обработку ПД</a></div>
+  </div>
+</footer>
+
+<script>
+const RATES = {
+  '44':   { lo: 1.7, hi: 2.5, name: '44-ФЗ' },
+  '223':  { lo: 1.7, hi: 3.0, name: '223-ФЗ' },
+  '615':  { lo: 1.8, hi: 3.0, name: '615-ПП' },
+  'comm': { lo: 2.5, hi: 5.5, name: 'Коммерция' },
+};
+let mode = 'sum', law = '44';
+
+document.querySelectorAll('#lawPills button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('#lawPills button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+    law = b.dataset.law;
+    recalc();
+  });
+});
+
+function setMode(m){
+  mode = m;
+  document.getElementById('modeSum').classList.toggle('on', m==='sum');
+  document.getElementById('modeNmck').classList.toggle('on', m==='nmck');
+  document.getElementById('boxSum').style.display = m==='sum' ? '' : 'none';
+  document.getElementById('boxNmck').style.display = m==='nmck' ? '' : 'none';
+  recalc();
+}
+const MIN_FEE = 1200;
+function ceil100(n){ return Math.ceil(n/100)*100; }
+function applyFloor(n){ return Math.max(ceil100(n), MIN_FEE); }
+function fmt(n){ return Math.round(n).toLocaleString('ru-RU').replace(/,/g,' ') + ' ₽'; }
+function parseAmount(s){ return Number(String(s||'').replace(/\D/g,'')) || 0; }
+function formatThousands(n){ return n.toLocaleString('ru-RU'); }
+function liveFormatInput(el){
+  const oldVal = el.value;
+  const oldCaret = el.selectionStart || 0;
+  const digitsBefore = oldVal.slice(0, oldCaret).replace(/\D/g,'').length;
+  const num = parseAmount(oldVal);
+  const formatted = num ? formatThousands(num) : '';
+  el.value = formatted;
+  // restore caret by walking through formatted string until digitsBefore digits seen
+  let i = 0, count = 0;
+  while (i < formatted.length && count < digitsBefore){
+    if (/\d/.test(formatted[i])) count++;
+    i++;
+  }
+  try { el.setSelectionRange(i, i); } catch(e) {}
+}
+function getAmount(){
+  if (mode === 'sum') return parseAmount(document.getElementById('amount').value);
+  const nmck = parseAmount(document.getElementById('nmck').value);
+  const pct = Number(String(document.getElementById('pct').value).replace(',','.')) || 0;
+  const v = nmck * pct / 100;
+  document.getElementById('nmckCalc').textContent = fmt(v);
+  return v;
+}
+function recalc(){
+  const days = Number(document.getElementById('days').value) || 0;
+  const amt = getAmount();
+  const r = RATES[law];
+  const lo = applyFloor(amt * r.lo/100 * days/365);
+  const hi = applyFloor(amt * r.hi/100 * days/365);
+  document.getElementById('resRange').innerHTML = `от ${fmt(lo)} <span class="ital">до</span> ${fmt(hi)}`;
+  document.getElementById('resRate').innerHTML = `<strong>${r.lo}%–${r.hi}%</strong> годовых · ${r.name}`;
+}
+['amount','days','nmck','pct','type'].forEach(id=>{
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.addEventListener('input', () => {
+    if (id === 'amount' || id === 'nmck') liveFormatInput(el);
+    recalc();
+  });
+});
+recalc();
+
+// ─────── Quiz: 4-step wizard + result ───────
+(function(){
+  const card = document.getElementById('quizCard');
+  if (!card) return;
+  const TOTAL = 4;
+  const STEP_LABELS = {
+    1: 'Параметры гарантии',
+    2: 'О компании',
+    3: 'Опыт и отказы',
+    4: 'Красные флаги',
+  };
+  const RATE_BY_LAW = {
+    '44':   { lo: 1.7, hi: 2.5, name: '44-ФЗ' },
+    '223':  { lo: 1.7, hi: 3.0, name: '223-ФЗ' },
+    '615':  { lo: 1.8, hi: 3.0, name: '615-ПП' },
+    'comm': { lo: 2.5, hi: 5.5, name: 'Коммерция' },
+  };
+  let current = 1;  // 1..4 or 'result'
+  const state = {};
+
+  // live-format quiz sum input
+  const sumInput = document.getElementById('quizSum');
+  if (sumInput){
+    sumInput.addEventListener('input', () => {
+      liveFormatInput(sumInput);
+      validateStep();
+    });
+  }
+
+  // collect all option/select changes to refresh validation
+  card.addEventListener('change', validateStep);
+  const revenue = document.getElementById('quizRevenue');
+  if (revenue) revenue.addEventListener('change', validateStep);
+
+  function getStepNode(s){
+    return card.querySelector(`.quiz-step[data-step="${s}"]`);
+  }
+  function showStep(s){
+    card.querySelectorAll('.quiz-step').forEach(n => n.classList.remove('active'));
+    const node = getStepNode(s);
+    if (node) node.classList.add('active');
+    current = s;
+    // header
+    const label = document.getElementById('quizStepLabel');
+    const progress = document.getElementById('quizProgress');
+    const back = document.getElementById('quizBack');
+    const next = document.getElementById('quizNext');
+    if (s === 'result'){
+      label.textContent = 'Готово · 4 из 4';
+      progress.style.width = '100%';
+      back.textContent = '← Назад к вопросам';
+      back.style.display = '';
+      next.style.display = 'none';
+    } else {
+      label.textContent = `Шаг ${s} из ${TOTAL} · ${STEP_LABELS[s]}`;
+      progress.style.width = `${(s / TOTAL) * 100}%`;
+      back.textContent = '← Назад';
+      back.style.display = '';
+      back.disabled = (s === 1);
+      next.style.display = '';
+      next.innerHTML = (s === TOTAL)
+        ? 'Получить результат <span class="arr">→</span>'
+        : 'Далее <span class="arr">→</span>';
+    }
+    validateStep();
+  }
+  function validateStep(){
+    const next = document.getElementById('quizNext');
+    if (current === 'result' || !next) return;
+    const node = getStepNode(current);
+    let valid = true;
+    // radio groups
+    node.querySelectorAll('.opts[data-required="1"]').forEach(g => {
+      if (!g.querySelector('input[type=radio]:checked')) valid = false;
+    });
+    // text/numeric inputs marked required
+    node.querySelectorAll('input[data-required="1"]').forEach(i => {
+      const v = (i.value || '').replace(/\s+/g,'');
+      if (!v) valid = false;
+    });
+    // select
+    node.querySelectorAll('select[data-required="1"]').forEach(s => {
+      if (!s.value) valid = false;
+    });
+    next.disabled = !valid;
+  }
+  function collectStep(s){
+    const node = getStepNode(s);
+    if (!node) return;
+    node.querySelectorAll('.opts[data-field]').forEach(g => {
+      const checked = g.querySelector('input[type=radio]:checked');
+      if (checked) state[g.dataset.field] = checked.value;
+    });
+    node.querySelectorAll('input[id], select[id]').forEach(el => {
+      const key = el.dataset.field || el.id;
+      state[key] = el.value;
+    });
+  }
+  function calcResult(){
+    let prob = 90;
+    let banks = 47;
+    const sum = Number(String(state.quizSum||'').replace(/\D/g,'')) || 0;
+
+    // Age penalties
+    if (state.age === 'lt6')      { prob -= 5;  banks -= 5; }
+    else if (state.age === '6m1y'){ prob -= 2;  banks -= 2; }
+    // Revenue
+    if (state.revenue === 'lt10') { prob -= 5;  banks -= 5; }
+    // Profit
+    if (state.profit === 'loss')  { prob -= 15; banks -= 15; }
+    else if (state.profit === 'zero'){ prob -= 5; banks -= 4; }
+    // Sum > 200 млн
+    if (sum > 200000000)          { prob -= 10; banks -= 10; }
+    // Refusals
+    if (state.refusals === '1-2') { prob -= 5;  banks -= 5; }
+    else if (state.refusals === 'many'){ prob -= 20; banks -= 15; }
+    // Red flags
+    if (state.redflags === 'minor'){ prob -= 10; banks -= 7; }
+    else if (state.redflags === 'major'){ prob -= 30; banks -= 20; }
+    // Hot urgency + young company → small extra
+    if (state.urgency === 'hot' && state.age === 'lt6'){ prob -= 5; banks -= 5; }
+    // Note: no penalty for "no experience" — it's our USP
+
+    prob = Math.max(30, Math.min(95, prob));
+    banks = Math.max(5, Math.min(47, banks));
+
+    document.getElementById('qrProb').textContent = prob;
+    document.getElementById('qrBanks').textContent = banks;
+    const rate = RATE_BY_LAW[state.law] || RATE_BY_LAW['44'];
+    document.getElementById('qrRate').textContent = `${rate.lo}%–${rate.hi}%`;
+
+    const probWrap = document.getElementById('qrStatProb');
+    probWrap.classList.remove('is-high','is-mid','is-low');
+    if (prob >= 70) probWrap.classList.add('is-high');
+    else if (prob >= 40) probWrap.classList.add('is-mid');
+    else probWrap.classList.add('is-low');
+  }
+
+  document.getElementById('quizNext').addEventListener('click', () => {
+    if (current === 'result') return;
+    collectStep(current);
+    if (current < TOTAL){
+      showStep(current + 1);
+    } else {
+      calcResult();
+      showStep('result');
+    }
+  });
+  document.getElementById('quizBack').addEventListener('click', () => {
+    if (current === 'result') showStep(TOTAL);
+    else if (current > 1) showStep(current - 1);
+  });
+
+  showStep(1);
+})();
+
+// Sticky mobile CTA — show after 200px scroll, hide near footer, mobile only
+(function(){
+  const cta = document.getElementById('stickyCta');
+  const spacer = document.getElementById('stickySpacer');
+  const footer = document.querySelector('footer.bot');
+  if (!cta || !footer) return;
+  const isMobile = () => window.innerWidth <= 760;
+  function update(){
+    if (!isMobile()){
+      cta.classList.remove('show');
+      spacer.classList.remove('on');
+      return;
+    }
+    const scrolled = window.scrollY > 200;
+    const footerTop = footer.getBoundingClientRect().top;
+    const nearFooter = footerTop < window.innerHeight - 40;
+    const visible = scrolled && !nearFooter;
+    cta.classList.toggle('show', visible);
+    spacer.classList.toggle('on', visible);
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
+</body>
+</html>
