@@ -90,6 +90,14 @@
   .micro-row span{display:inline-flex;align-items:center;gap:8px}
   .micro-row .tk{color:var(--green);font-weight:900;font-size:15px}
 
+  .hero-contacts{margin-top:22px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.04em;color:#374151}
+  .hero-contacts .hc-l{color:var(--muted);text-transform:uppercase;letter-spacing:.14em;font-size:10.5px;margin-right:4px}
+  .hero-contacts a{color:var(--ink);font-weight:700;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:1px}
+  .hero-contacts a:hover{color:var(--amber-2);border-bottom-color:var(--amber)}
+  .hero-contacts .hc-sep{color:var(--muted)}
+
+  .hero-trust{margin-top:16px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:14px;border-top:1px dashed var(--line-soft)}
+
   /* hero card */
   .quote-card{background:var(--ink);color:var(--paper);border-radius:6px;padding:36px 32px;position:relative;overflow:hidden}
   .quote-card::before{content:"";position:absolute;top:0;right:0;width:160px;height:160px;background:radial-gradient(circle at top right, rgba(217,134,58,.18), transparent 70%);pointer-events:none}
@@ -415,8 +423,13 @@
   .ftr .news input{height:46px;background:transparent;border:1px solid #2c3340;color:var(--paper);font:inherit;padding:0 14px;width:100%;border-radius:4px}
   .ftr .news input::placeholder{color:#7d869b}
   .ftr .news button{margin-top:8px;height:46px;background:var(--amber);color:var(--ink);border:0;font:inherit;font-weight:800;cursor:pointer;border-radius:4px;width:100%}
-  .ftr-bot{display:flex;justify-content:space-between;border-top:1px solid #2c3340;margin-top:56px;padding-top:24px;color:#7d869b;font-size:12px}
+  .ftr-bot{display:flex;justify-content:space-between;border-top:1px solid #2c3340;margin-top:24px;padding-top:24px;color:#7d869b;font-size:12px}
   .ftr-bot a{color:#7d869b;text-decoration:underline;display:inline}
+  .ftr-addr{margin-top:12px;font-size:12.5px;line-height:1.5;color:#a8b1c2}
+  .ftr-hours{margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#7d869b}
+  .ftr-rekv{margin-top:48px;padding-top:24px;border-top:1px solid #2c3340}
+  .ftr-rekv-row{display:flex;flex-wrap:wrap;gap:8px 22px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#7d869b;letter-spacing:.04em;line-height:1.5}
+  .ftr-rekv-row strong{color:var(--paper);font-weight:700}
 
   @media (max-width:1100px){
     .hero-grid,.calc,.docs,.cmp-head,.cmp-row,.dirs-grid,.tl-grid,.tl-bar,.tl-foot,.why-grid,.quiz-wrap,.ftr,.pains-list,.promo,.banks-foot,.cases-grid,.quiz-result-form,.tamozh-grid{grid-template-columns:1fr 1fr}
@@ -480,14 +493,14 @@
       <a href="#faq">FAQ</a>
     </nav>
     <div class="top-r">
-      <div class="top-phone">
+      <a href="tel:+79680065222" class="top-phone" style="text-decoration:none;color:inherit">
         <div class="l">Отвечаем за 15 минут</div>
-        <div class="n">8 930 818 88 98</div>
-      </div>
-      <a href="#" class="icon-btn ic-max ic-disabled" title="Max — скоро" aria-label="Max">
+        <div class="n">+7 (968) 006-52-22</div>
+      </a>
+      <a href="https://max.ru/+79680065222" target="_blank" rel="noopener" class="icon-btn ic-max" title="Написать в Max" aria-label="Написать в Max">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h2.6L12 12.4 17.4 4H20v16h-2.8V8.7L12 16.5 6.8 8.7V20H4z"/></svg>
       </a>
-      <a href="#" class="icon-btn ic-tg ic-disabled" title="Telegram — скоро" aria-label="Telegram">
+      <a href="https://t.me/+79680065222" target="_blank" rel="noopener" class="icon-btn ic-tg" title="Написать в Telegram" aria-label="Написать в Telegram">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.4 2.6 2.4 10.1c-.6.2-.6 1 0 1.2l4.8 1.5 1.7 5.4c.2.6.9.7 1.3.2l2.7-3 4.7 3.5c.5.4 1.2.1 1.4-.5l3.2-13.7c.2-.7-.5-1.3-1.2-1.1zM10 14.5l-.4 3.4-1.2-3.7L18 5.4 10 14.5z"/></svg>
       </a>
     </div>
@@ -500,7 +513,7 @@
     <div>
       <div class="hero-eyebrow">
         <span class="dot"></span>
-        <span class="eyebrow">Брокер банковских гарантий · с 2014</span>
+        <span class="eyebrow">Брокер банковских гарантий · с 2015</span>
       </div>
 
       <h1 class="hero-h">
@@ -516,7 +529,7 @@
 
       <div class="hero-num">
         <div>
-          <div class="v">12<span class="u">лет</span></div>
+          <div class="v">11<span class="u">лет</span></div>
           <div class="l">На рынке</div>
         </div>
         <div>
@@ -541,6 +554,17 @@
         <span><span class="tk">✓</span> Оплата от третьих лиц</span>
         <span><span class="tk">✓</span> <strong>0 ₽</strong> услуги брокера</span>
       </div>
+
+      <div class="hero-contacts">
+        <span class="hc-l">Связаться сразу:</span>
+        <a href="tel:+79680065222">+7 (968) 006-52-22</a>
+        <span class="hc-sep">·</span>
+        <a href="https://t.me/+79680065222" target="_blank" rel="noopener">Telegram</a>
+        <span class="hc-sep">·</span>
+        <a href="https://max.ru/+79680065222" target="_blank" rel="noopener">Max</a>
+      </div>
+
+      <div class="hero-trust">ООО «Модус» · ИНН 5262312221 · работаем с 2015</div>
     </div>
 
     <aside>
@@ -567,11 +591,11 @@
         <div class="qc-alt">
           <div class="l">Или напишите</div>
           <div class="qc-alt-row">
-            <a href="#" class="qc-alt-btn alt-max alt-disabled" aria-label="Max">
+            <a href="https://max.ru/+79680065222" target="_blank" rel="noopener" class="qc-alt-btn alt-max" aria-label="Написать в Max">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h2.6L12 12.4 17.4 4H20v16h-2.8V8.7L12 16.5 6.8 8.7V20H4z"/></svg>
               <span>Max</span>
             </a>
-            <a href="#" class="qc-alt-btn alt-tg alt-disabled" aria-label="Telegram">
+            <a href="https://t.me/+79680065222" target="_blank" rel="noopener" class="qc-alt-btn alt-tg" aria-label="Написать в Telegram">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.4 2.6 2.4 10.1c-.6.2-.6 1 0 1.2l4.8 1.5 1.7 5.4c.2.6.9.7 1.3.2l2.7-3 4.7 3.5c.5.4 1.2.1 1.4-.5l3.2-13.7c.2-.7-.5-1.3-1.2-1.1zM10 14.5l-.4 3.4-1.2-3.7L18 5.4 10 14.5z"/></svg>
               <span>Telegram</span>
             </a>
@@ -1085,7 +1109,7 @@
     <div class="sec-head">
       <div class="num">09 · Надёжность</div>
       <h2>Почему с нами <span class="ital">надёжно работать</span></h2>
-      <div class="aside">12 лет, 47 банков, тысячи выпущенных БГ.</div>
+      <div class="aside">Более 10 лет на рынке, 47 банков, тысячи выпущенных БГ.</div>
     </div>
     <div class="why-grid">
       <div class="why-card">
@@ -1094,9 +1118,9 @@
         <p>Подберём лучшие условия из 47 аккредитованных банков. Все банки входят в Перечень Минфина России.</p>
       </div>
       <div class="why-card">
-        <div class="gn">12</div>
+        <div class="gn">11</div>
         <h4>Лет на рынке</h4>
-        <p>Работаем с 2014 года. Оформили тысячи банковских гарантий для компаний любого размера.</p>
+        <p>Работаем с 2015 года (ООО «Модус», ОГРН 1155262000376). Оформили тысячи банковских гарантий для компаний любого размера.</p>
       </div>
       <div class="why-card">
         <div class="gn">100<span style="font-size:32px">%</span></div>
@@ -1313,7 +1337,7 @@
 
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-cta" id="stickyCta">
-  <a href="tel:+79308188898" class="scta-call" aria-label="Позвонить">
+  <a href="tel:+79680065222" class="scta-call" aria-label="Позвонить">
     <span>📞</span><span>Позвонить</span>
   </a>
   <a href="#form" class="scta-form" aria-label="Запросить расчёт">
@@ -1327,7 +1351,7 @@
   <div class="wrap ftr">
     <div>
       <div class="brand-bot">М<span class="ital">одус</span></div>
-      <div class="desc">Брокер банковских гарантий. 12 лет на рынке. Работаем с 47 аккредитованными банками. Выдача БГ от 1.5 часов. Принимаем оплату от третьих лиц.</div>
+      <div class="desc">Брокер банковских гарантий. Более 10 лет на рынке. Работаем с 47 аккредитованными банками. Выдача БГ от 1.5 часов. Принимаем оплату от третьих лиц.</div>
     </div>
     <div>
       <h5>Направления</h5>
@@ -1338,13 +1362,17 @@
     </div>
     <div>
       <h5>Контакты</h5>
-      <a href="tel:+79308188898" style="font-weight:800;font-size:18px;color:var(--paper)">8 930 818 88 98</a>
+      <a href="tel:+79680065222" style="font-weight:800;font-size:18px;color:var(--paper)">+7 (968) 006-52-22</a>
       <a href="mailto:modus@modusbg-nn.ru">modus@modusbg-nn.ru</a>
+      <a href="https://t.me/+79680065222" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://max.ru/+79680065222" target="_blank" rel="noopener">Max</a>
+      <div class="ftr-addr">603105, г. Нижний Новгород,<br>ул. Бориса Панина, д. 5, корп. 6, кв. 84</div>
+      <div class="ftr-hours">Пн–Пт 09:00–19:00 (МСК)</div>
       <div style="display:flex;gap:8px;margin-top:14px">
-        <a href="#" class="icon-btn ic-max ic-disabled" title="Max — скоро" aria-label="Max">
+        <a href="https://max.ru/+79680065222" target="_blank" rel="noopener" class="icon-btn ic-max" title="Написать в Max" aria-label="Написать в Max">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h2.6L12 12.4 17.4 4H20v16h-2.8V8.7L12 16.5 6.8 8.7V20H4z"/></svg>
         </a>
-        <a href="#" class="icon-btn ic-tg ic-disabled" title="Telegram — скоро" aria-label="Telegram">
+        <a href="https://t.me/+79680065222" target="_blank" rel="noopener" class="icon-btn ic-tg" title="Написать в Telegram" aria-label="Написать в Telegram">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.4 2.6 2.4 10.1c-.6.2-.6 1 0 1.2l4.8 1.5 1.7 5.4c.2.6.9.7 1.3.2l2.7-3 4.7 3.5c.5.4 1.2.1 1.4-.5l3.2-13.7c.2-.7-.5-1.3-1.2-1.1zM10 14.5l-.4 3.4-1.2-3.7L18 5.4 10 14.5z"/></svg>
         </a>
       </div>
@@ -1360,8 +1388,20 @@
       </label>
     </div>
   </div>
+
+  <!-- Footer requisites block -->
+  <div class="wrap ftr-rekv">
+    <div class="ftr-rekv-row">
+      <strong>ООО «Модус»</strong>
+      <span>ОГРН 1155262000376</span>
+      <span>ИНН 5262312221</span>
+      <span>КПП 526201001</span>
+      <span>Директор: Попов Денис Владимирович</span>
+    </div>
+  </div>
+
   <div class="wrap ftr-bot">
-    <div>© 2014–2026 Модус · Все права защищены</div>
+    <div>© 2015–2026 ООО «Модус». Все права защищены.</div>
     <div><a href="privacy.html">Политика конфиденциальности</a> · <a href="personal-data-consent.html">Согласие на обработку ПД</a></div>
   </div>
 </footer>
