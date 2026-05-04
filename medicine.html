@@ -178,6 +178,18 @@
   .case-time{display:inline-flex;align-items:center;gap:8px;background:#fffaf0;border:1px solid var(--amber-soft);border-left:3px solid var(--amber);padding:8px 14px;border-radius:4px;font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:18px}
   .case-note{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:16px;line-height:1.4;color:#1f2937}
   .cases-foot{margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);letter-spacing:.06em;line-height:1.55}
+  .case-subsegment{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#5a6072;margin:-12px 0 14px}
+
+  /* Tamozhenaya reference rate matrix */
+  .tamozh-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:32px;align-items:start}
+  .tamozh-rates{background:#fff;border:1px solid var(--line-soft);padding:28px 32px;border-radius:6px}
+  .tamozh-rates-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--line-soft)}
+  .tamozh-rate-row{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px dashed var(--line-soft);font-size:14px}
+  .tamozh-rate-row:last-of-type{border-bottom:0}
+  .tamozh-rate-l{color:#374151}
+  .tamozh-rate-v{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:18px;letter-spacing:-.01em}
+  .tamozh-rate-v .ti{font-style:italic;font-weight:500;color:var(--muted);font-size:12px}
+  .tamozh-rates-foot{margin-top:18px;padding-top:14px;border-top:1px solid var(--line-soft);font-size:12px;color:var(--muted);line-height:1.55}
 
   /* ─────── CTA-STRIP ─────── */
   .cta-strip{background:var(--paper-2);border:1px solid var(--line-soft);border-radius:6px;padding:32px 40px;display:grid;grid-template-columns:1fr 2fr;gap:32px;align-items:center}
@@ -361,6 +373,15 @@
   .consent-line{font-size:11.5px;color:var(--muted);margin-top:14px;line-height:1.5}
   .consent-line a{text-decoration:underline}
 
+  /* ─────── Consent checkbox (PD) ─────── */
+  .consent{display:flex;gap:8px;align-items:flex-start;font-size:12px;line-height:1.4;color:#5a6072;margin:12px 0;cursor:pointer}
+  .consent input[type="checkbox"]{flex:0 0 auto;margin-top:2px;accent-color:var(--amber);width:16px;height:16px}
+  .consent a{color:var(--ink);text-decoration:underline;text-decoration-thickness:1px}
+  .consent a:hover{color:var(--amber)}
+  .consent.consent-dark{color:rgba(255,255,255,.7)}
+  .consent.consent-dark a{color:#fff;text-decoration-color:rgba(255,255,255,.5)}
+  .consent.consent-dark a:hover{color:var(--amber)}
+
   .faq-list{max-width:880px;margin:0 auto}
   details.faq{border-top:1px solid var(--line);padding:0}
   details.faq:last-of-type{border-bottom:1px solid var(--line)}
@@ -398,7 +419,7 @@
   .ftr-bot a{color:#7d869b;text-decoration:underline;display:inline}
 
   @media (max-width:1100px){
-    .hero-grid,.calc,.docs,.cmp-head,.cmp-row,.dirs-grid,.tl-grid,.tl-bar,.tl-foot,.why-grid,.quiz-wrap,.ftr,.pains-list,.promo,.banks-foot,.cases-grid,.quiz-result-form{grid-template-columns:1fr 1fr}
+    .hero-grid,.calc,.docs,.cmp-head,.cmp-row,.dirs-grid,.tl-grid,.tl-bar,.tl-foot,.why-grid,.quiz-wrap,.ftr,.pains-list,.promo,.banks-foot,.cases-grid,.quiz-result-form,.tamozh-grid{grid-template-columns:1fr 1fr}
     .quiz-result-stats{grid-template-columns:1fr 1fr}
     .cta-strip{grid-template-columns:1fr;gap:18px;padding:28px}
     .cta-strip-form{grid-template-columns:1fr 1fr auto}
@@ -410,7 +431,7 @@
     .top-row{grid-template-columns:auto auto;gap:12px}
     nav.main{display:none}
     .top-phone{display:none}
-    .hero-grid,.calc,.docs,.cmp-head,.cmp-row,.dirs-grid,.tl-grid,.tl-bar,.tl-foot,.why-grid,.quiz-wrap,.ftr,.pains-list,.promo,.cases-grid,.quiz-result-form,.quiz-result-stats,.opts.opts-2{grid-template-columns:1fr}
+    .hero-grid,.calc,.docs,.cmp-head,.cmp-row,.dirs-grid,.tl-grid,.tl-bar,.tl-foot,.why-grid,.quiz-wrap,.ftr,.pains-list,.promo,.cases-grid,.quiz-result-form,.quiz-result-stats,.opts.opts-2,.tamozh-grid{grid-template-columns:1fr}
     .quiz-card{padding:24px}
     .qr-stat + .qr-stat{padding-left:0;border-top:1px solid var(--line-soft);padding-top:18px}
     .qr-stat + .qr-stat::before{display:none}
@@ -446,7 +467,7 @@
     <a class="brand" href="index.html"><span class="mark">М</span><span>Модус</span></a>
     <nav class="main">
       <div class="nav-drop">
-        <a href="#dirs" class="nav-drop-trigger">Направления</a>
+        <a href="index.html#dirs" class="nav-drop-trigger">Направления</a>
         <div class="nav-drop-menu">
           <a href="medicine.html" class="active">Медицина</a>
           <a href="stroyka.html">Стройка</a>
@@ -455,7 +476,7 @@
         </div>
       </div>
       <a href="#calc">Калькулятор</a>
-      <a href="index.html#promo">Промо</a>
+      <a href="#promo">Промо</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="top-r">
@@ -506,7 +527,7 @@
 
       <div class="promise">
         <span class="star">★</span>
-        <div class="t"><strong>Банковские гарантии без дополнительных условий.</strong> Принимаем оплату от третьих лиц. При наличии письменного предложения от вашего банка — сделаем дешевле.</div>
+        <div class="t"><strong>Услуги брокера для вас — 0 ₽.</strong> Наше вознаграждение оплачивает банк-партнёр по агентскому договору. Ставка для вас не выше, чем при прямом обращении.</div>
       </div>
 
       <div class="micro-row">
@@ -514,6 +535,7 @@
         <span><span class="tk">✓</span> Предодобрение от 3 минут</span>
         <span><span class="tk">✓</span> Опыт исполнения не нужен</span>
         <span><span class="tk">✓</span> Оплата от третьих лиц</span>
+        <span><span class="tk">✓</span> <strong>0 ₽</strong> услуги брокера</span>
       </div>
     </div>
 
@@ -534,9 +556,10 @@
           <span>Получить расчёт</span>
           <span class="arr">→</span>
         </button>
-        <div class="qc-foot">
-          Нажимая кнопку, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a> и даёте <a href="personal-data-consent.html">согласие на обработку персональных данных</a>.
-        </div>
+        <label class="consent consent-dark">
+          <input type="checkbox" name="consent" required checked>
+          <span>Я даю согласие на <a href="personal-data-consent.html" target="_blank" rel="noopener">обработку персональных данных</a> и ознакомлен(а) с <a href="privacy.html" target="_blank" rel="noopener">Политикой конфиденциальности</a>.</span>
+        </label>
         <div class="qc-alt">
           <div class="l">Или напишите</div>
           <div class="qc-alt-row">
@@ -567,43 +590,43 @@
       <div class="pain-row">
         <div class="pain-num">i.</div>
         <div>
-          <p class="pain-q">«Банк не даёт никакой конкретики и сроков, а подача уже завтра»</p>
-          <div class="pain-a"><span class="ck">✓</span><span>Выдадим БГ от 1.5 часов — успеем даже в последний день.</span></div>
+          <p class="pain-q">«Многолотовая закупка Минздрава, разные сроки и суммы»</p>
+          <div class="pain-a"><span class="ck">✓</span><span>Ведём весь пакет одним менеджером, синхронизируем выпуск БГ под каждый лот.</span></div>
         </div>
       </div>
       <div class="pain-row">
         <div class="pain-num">ii.</div>
         <div>
-          <p class="pain-q">«Одобрили только 50 млн, а нужно 200»</p>
-          <div class="pain-a"><span class="ck">✓</span><span>Подберём банк с нужным лимитом из 47 аккредитованных.</span></div>
+          <p class="pain-q">«КТРУ-ошибка ломает всю заявку»</p>
+          <div class="pain-a"><span class="ck">✓</span><span>Проверяем соответствие КТРУ и ОКПД2 до подачи в банк.</span></div>
         </div>
       </div>
       <div class="pain-row">
         <div class="pain-num">iii.</div>
         <div>
-          <p class="pain-q">«Подача завтра, а БГ ещё не одобрили»</p>
-          <div class="pain-a"><span class="ck">✓</span><span>Срочный выпуск день в день — не попадёте в РНП.</span></div>
+          <p class="pain-q">«Гарантийные обязательства на МРТ — 5 лет, банки боятся»</p>
+          <div class="pain-a"><span class="ck">✓</span><span>Есть банки, специализирующиеся на длинных гарантийных БГ для медтехники.</span></div>
         </div>
       </div>
       <div class="pain-row">
         <div class="pain-num">iv.</div>
         <div>
-          <p class="pain-q">«Комиссия брокеров или банка 4% — вся маржа уходит»</p>
-          <div class="pain-a"><span class="ck">✓</span><span>Стоимость БГ от 1.7% годовых.</span></div>
+          <p class="pain-q">«Поставщик ЖНВЛП — банк требует регудостоверение и сертификаты»</p>
+          <div class="pain-a"><span class="ck">✓</span><span>Знаем, какие документы нужны конкретному банку, готовим пакет под него.</span></div>
         </div>
       </div>
       <div class="pain-row">
         <div class="pain-num">v.</div>
         <div>
-          <p class="pain-q">«Банк требует депозит, поручительство и открытие счёта»</p>
-          <div class="pain-a"><span class="ck">✓</span><span>Без депозита, без открытия р/с, принимаем оплату от третьих лиц.</span></div>
+          <p class="pain-q">«Срыв поставки = РНП, потом нет доступа к закупкам Минздрава»</p>
+          <div class="pain-a"><span class="ck">✓</span><span>Выпуск день в день, контроль каждого этапа.</span></div>
         </div>
       </div>
       <div class="pain-row">
         <div class="pain-num">vi.</div>
         <div>
-          <p class="pain-q">«У нас компания меньше года — всем нужен опыт исполнения»</p>
-          <div class="pain-a"><span class="ck">✓</span><span>Опыт исполнения не нужен. Работаем с компаниями с первого дня.</span></div>
+          <p class="pain-q">«Платёж проходит через материнскую компанию или партнёра»</p>
+          <div class="pain-a"><span class="ck">✓</span><span>Принимаем оплату от третьих лиц.</span></div>
         </div>
       </div>
     </div>
@@ -616,13 +639,18 @@
     <div class="sec-head">
       <div class="num">02 · Сравнение</div>
       <h2>Брокер Модус <span class="ital">vs</span> прямое обращение в банк</h2>
-      <div class="aside">Семь ключевых параметров — без иконок там, где сравнение числовое.</div>
+      <div class="aside">Восемь ключевых параметров — без иконок там, где сравнение числовое.</div>
     </div>
     <div class="cmp">
       <div class="cmp-head">
         <div>Параметр</div>
         <div class="h-us">Брокер Модус</div>
         <div>Традиционный банк</div>
+      </div>
+      <div class="cmp-row">
+        <div class="lbl">Комиссия брокеру</div>
+        <div class="us"><span class="ck">✓</span><span><strong style="color:var(--amber-2);font-weight:900;font-size:16px">0 ₽</strong> — оплачивает банк по агентскому договору</span></div>
+        <div class="them"><span>не применимо — самостоятельный подбор</span></div>
       </div>
       <div class="cmp-row">
         <div class="lbl">Возраст компании</div>
@@ -678,6 +706,7 @@
           <span class="case-law">44-ФЗ</span>
           <span class="case-meta">ПОСТАВКА МЕДОБОРУДОВАНИЯ</span>
         </div>
+        <div class="case-subsegment">Дистрибьютор медтехники</div>
         <div class="case-amount">37<span class="cur">млн ₽</span></div>
         <div class="case-type">Региональный заказчик. Многолотовая закупка Минздрава.</div>
         <div class="case-time">⚡ Выдано за 3 часа</div>
@@ -688,6 +717,7 @@
           <span class="case-law">223-ФЗ</span>
           <span class="case-meta">ЖНВЛП</span>
         </div>
+        <div class="case-subsegment">Фарм-поставщик</div>
         <div class="case-amount">13<span class="cur">млн ₽</span></div>
         <div class="case-type">Поставка лекарственных препаратов из перечня ЖНВЛП.</div>
         <div class="case-time">⚡ Выдано за 2 часа</div>
@@ -698,6 +728,7 @@
           <span class="case-law">44-ФЗ</span>
           <span class="case-meta">ГАРАНТИЯ НА МЕДТЕХНИКУ</span>
         </div>
+        <div class="case-subsegment">Производитель оборудования</div>
         <div class="case-amount">2.5<span class="cur">млн ₽</span></div>
         <div class="case-type">Гарантийные обязательства на МРТ-аппарат, срок — 5 лет.</div>
         <div class="case-time">⚡ Выдано за 1.5 часа</div>
@@ -720,7 +751,10 @@
         <input type="tel" placeholder="Телефон" required />
         <input type="number" placeholder="Сумма БГ, ₽" required />
         <button type="submit">Получить расчёт <span class="arr">→</span></button>
-        <div class="cta-strip-consent">Нажимая кнопку, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a> и даёте <a href="personal-data-consent.html">согласие на обработку персональных данных</a>.</div>
+        <label class="consent" style="grid-column:1/-1;margin-top:6px">
+          <input type="checkbox" name="consent" required checked>
+          <span>Я даю согласие на <a href="personal-data-consent.html" target="_blank" rel="noopener">обработку персональных данных</a> и ознакомлен(а) с <a href="privacy.html" target="_blank" rel="noopener">Политикой конфиденциальности</a>.</span>
+        </label>
       </form>
     </div>
   </div>
@@ -802,8 +836,29 @@
           <span>Запросить точный расчёт</span>
           <span class="arr">→</span>
         </button>
-        <div class="calc-consent">Нажимая кнопку, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a> и даёте <a href="personal-data-consent.html">согласие на обработку персональных данных</a>.</div>
+        <label class="consent consent-dark">
+          <input type="checkbox" name="consent" required checked>
+          <span>Я даю согласие на <a href="personal-data-consent.html" target="_blank" rel="noopener">обработку персональных данных</a> и ознакомлен(а) с <a href="privacy.html" target="_blank" rel="noopener">Политикой конфиденциальности</a>.</span>
+        </label>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMO -->
+<section class="s" id="promo" style="padding-top:60px">
+  <div class="wrap">
+    <div class="promo">
+      <div>
+        <div class="eyebrow" style="color:#3a2810;margin-bottom:18px">Действующая акция</div>
+        <h3>Три БГ на участие — <span class="ital">даром</span></h3>
+        <p>Оплачиваем комиссию банка за выдачу БГ на участие для первых 3 гарантий. Вы не платите ничего. Идеально для первого выхода на госзакупки или для компаний с небольшими тендерами.</p>
+        <a class="btn-promo">
+          <span>Забрать 3 бесплатные гарантии</span>
+          <span class="arr">→</span>
+        </a>
+      </div>
+      <div class="promo-meta">3 / 3 free</div>
     </div>
   </div>
 </section>
@@ -864,8 +919,8 @@
         <div>
           <div class="badge">①</div>
           <div>
-            <h5>Оплачиваете комиссию ТОЛЬКО банку</h5>
-            <p>Никакой дополнительной комиссии Модус. Цена для вас — ровно та, что выставил банк.</p>
+            <h5>Услуги брокера для вас — 0 ₽</h5>
+            <p>Платите только комиссию банка по тарифу. Наше вознаграждение оплачивает банк-партнёр по агентскому договору.</p>
           </div>
         </div>
         <div>
@@ -1152,7 +1207,10 @@
                 <option value="max">Написать в Max</option>
               </select>
               <button type="submit">Получить подборку <span class="arr">→</span></button>
-              <div class="qr-form-consent">Нажимая кнопку, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a> и даёте <a href="personal-data-consent.html">согласие на обработку персональных данных</a>.</div>
+              <label class="consent">
+                <input type="checkbox" name="consent" required checked>
+                <span>Я даю согласие на <a href="personal-data-consent.html" target="_blank" rel="noopener">обработку персональных данных</a> и ознакомлен(а) с <a href="privacy.html" target="_blank" rel="noopener">Политикой конфиденциальности</a>.</span>
+              </label>
             </form>
           </div>
         </div>
@@ -1176,6 +1234,10 @@
     </div>
     <div class="faq-list">
       <details class="faq" open>
+        <summary><span>Сколько стоят ваши услуги для меня?</span><span class="pl"></span></summary>
+        <div class="ans">Услуги брокера для вас — <strong style="color:var(--amber-2)">0 ₽</strong>. Мы работаем с банками по агентским договорам и получаем вознаграждение напрямую от банка-партнёра. Вы оплачиваете только комиссию банка за выпуск гарантии — по тарифу банка, без наценки. Это не повышает ставку: банк фиксирует условия по своим скоринговым моделям независимо от того, пришли вы напрямую или через брокера. Через нас вы получаете доступ сразу к 47 банкам и выбор лучшей ставки — бесплатно.</div>
+      </details>
+      <details class="faq">
         <summary><span>Работаете ли вы по КТРУ и ЖНВЛП?</span><span class="pl"></span></summary>
         <div class="ans">Да. Это наша основная специализация в медицинской нише — закупки Минздрава, региональных минздравов и федеральных медицинских учреждений по 44-ФЗ и 223-ФЗ.</div>
       </details>
@@ -1246,7 +1308,10 @@
       <div style="font-size:13.5px;line-height:1.55;color:#a8b1c2;margin-bottom:14px">Как подготовить компанию, чтобы банк одобрил БГ за 1.5 часа.</div>
       <input type="email" placeholder="email"/>
       <button>Скачать чек-лист</button>
-      <div style="font-size:11px;color:#7d869b;margin-top:10px;line-height:1.5">Нажимая «Скачать», вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a> и даёте <a href="personal-data-consent.html">согласие на обработку персональных данных</a>.</div>
+      <label class="consent consent-dark" style="margin-top:8px">
+        <input type="checkbox" name="consent" required checked>
+        <span>Я даю согласие на <a href="personal-data-consent.html" target="_blank" rel="noopener">обработку персональных данных</a> и ознакомлен(а) с <a href="privacy.html" target="_blank" rel="noopener">Политикой конфиденциальности</a>.</span>
+      </label>
     </div>
   </div>
   <div class="wrap ftr-bot">
@@ -1483,6 +1548,32 @@ recalc();
   });
 
   showStep(1);
+})();
+
+
+// ── Calc helper: long-term default for «Гарантийные обязательства» ──
+(function(){
+  const type = document.getElementById('type');
+  const days = document.getElementById('days');
+  if (!type || !days) return;
+  const wrap = days.parentElement;
+  let hint = wrap.querySelector('.calc-long-hint');
+  if (!hint){
+    hint = document.createElement('div');
+    hint.className = 'calc-long-hint';
+    hint.style.cssText = "font-size:12px;color:var(--muted);margin-top:6px;font-family:'JetBrains Mono',monospace;letter-spacing:.06em;line-height:1.4;display:none";
+    hint.textContent = 'Гарантия на медтехнику — типичный срок 3–10 лет. Авто-подставлено 5 лет.';
+    wrap.appendChild(hint);
+  }
+  type.addEventListener('change', () => {
+    if (type.value === 'Гарантийные обязательства'){
+      days.value = 1825;
+      days.dispatchEvent(new Event('input'));
+      hint.style.display = '';
+    } else {
+      hint.style.display = 'none';
+    }
+  });
 })();
 
 // Sticky mobile CTA — show after 200px scroll, hide near footer, mobile only
