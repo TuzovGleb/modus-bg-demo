@@ -45,8 +45,11 @@
   .nav-drop{position:relative}
   .nav-drop-trigger{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
   .nav-drop-trigger::after{content:"▾";font-size:10px;opacity:.6}
-  .nav-drop-menu{display:none;position:absolute;top:calc(100% + 14px);left:-12px;background:var(--paper);border:1px solid var(--line-soft);min-width:200px;padding:8px 0;box-shadow:0 8px 24px rgba(14,17,22,.08);border-radius:6px;z-index:60}
-  .nav-drop:hover .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu{display:block}
+  /* Invisible bridge — closes hover gap between trigger and menu */
+  .nav-drop::before{content:"";position:absolute;top:100%;left:-12px;right:-12px;height:14px;display:none}
+  .nav-drop:hover::before,.nav-drop.open::before{display:block}
+  .nav-drop-menu{opacity:0;visibility:hidden;position:absolute;top:calc(100% + 14px);left:-12px;background:var(--paper);border:1px solid var(--line-soft);min-width:200px;padding:8px 0;box-shadow:0 8px 24px rgba(14,17,22,.08);border-radius:6px;z-index:60;transition:opacity .15s ease,visibility 0s linear .25s}
+  .nav-drop:hover .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu,.nav-drop.open .nav-drop-menu{opacity:1;visibility:visible;transition:opacity .15s ease,visibility 0s linear 0s}
   .nav-drop-menu a{display:block;padding:10px 18px;font-size:14px;color:#374151;font-weight:600}
   .nav-drop-menu a:hover{background:var(--paper-2);color:var(--ink)}
   .nav-drop-menu a.active{color:var(--ink);background:var(--paper-2)}
@@ -180,8 +183,11 @@
   .case-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px}
   .case-law{display:inline-block;background:var(--ink);color:var(--paper);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;padding:5px 10px;border-radius:3px;font-weight:700}
   .case-meta{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-  .case-amount{font-family:'Fraunces',serif;font-weight:900;font-size:64px;line-height:1;letter-spacing:-.025em;color:var(--ink);margin-bottom:8px;display:flex;align-items:baseline;gap:10px}
-  .case-amount .cur{font-size:20px;color:var(--amber-2);font-weight:500;font-style:italic}
+  .case-tender{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .case-tender strong{color:var(--ink);font-weight:700;letter-spacing:0;text-transform:none;font-family:'Manrope',sans-serif;font-size:13px}
+  .case-amount{font-family:'Fraunces',serif;font-weight:900;font-size:64px;line-height:1;letter-spacing:-.025em;color:var(--ink);margin-bottom:6px;display:flex;align-items:baseline;gap:10px;white-space:nowrap}
+  .case-amount .cur{font-size:20px;color:var(--amber-2);font-weight:500;font-style:italic;white-space:nowrap}
+  .case-percent{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:var(--amber-2);font-weight:600;margin-bottom:14px}
   .case-type{font-size:14.5px;color:#374151;line-height:1.5;margin-bottom:18px}
   .case-time{display:inline-flex;align-items:center;gap:8px;background:#fffaf0;border:1px solid var(--amber-soft);border-left:3px solid var(--amber);padding:8px 14px;border-radius:4px;font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:18px}
   .case-note{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:16px;line-height:1.4;color:#1f2937}
@@ -227,9 +233,10 @@
   .calc input,.calc select{width:100%;height:52px;border:1px solid var(--line-soft);background:#fff;font:inherit;font-size:16px;padding:0 16px;border-radius:4px;color:var(--ink)}
   .calc input:focus,.calc select:focus{outline:2px solid var(--amber-soft);border-color:var(--amber)}
   .row2c{display:grid;grid-template-columns:1.4fr 1fr;gap:12px}
-  .calc-amt{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:8px}
-  .calc-amt input{border:0;height:auto;padding:0;font-family:'Fraunces',serif;font-weight:900;font-size:42px;letter-spacing:-.02em}
-  .calc-amt .cur{font-family:'Fraunces',serif;font-weight:500;font-style:italic;color:var(--muted);font-size:24px}
+  .calc-amt{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:8px;flex-wrap:nowrap}
+  .calc-amt input{border:0;height:auto;padding:0;font-family:'Fraunces',serif;font-weight:900;font-size:42px;letter-spacing:-.02em;min-width:0;flex:1}
+  .calc-amt .cur{font-family:'Fraunces',serif;font-weight:500;font-style:italic;color:var(--muted);font-size:24px;white-space:nowrap}
+  .calc-r .res-num,.qr-stat-v,.case-amount{white-space:nowrap}
 
   .calc-r{padding:48px 44px;background:var(--ink);color:var(--paper);display:flex;flex-direction:column}
   .calc-r .stamp{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#a8b1c2;display:flex;align-items:center;gap:10px}
@@ -262,6 +269,10 @@
   .tl-tick .dot{position:absolute;left:0;top:-7px;width:14px;height:14px;background:var(--amber);border-radius:50%;border:2px solid var(--paper)}
   .tl-tick .time{position:absolute;left:24px;top:-30px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-2);font-weight:700;white-space:nowrap}
   .tl-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:36px}
+  .tl-grid-6{grid-template-columns:repeat(3,1fr);row-gap:36px}
+  .tl-grid-6 .tl-bar{display:none}
+  .tl-grid-6 .tl-step{border-right:1px solid var(--line-soft)}
+  .tl-grid-6 .tl-step:nth-child(3n){border-right:0}
   .tl-step{padding:0 24px 0 0;border-right:1px solid var(--line-soft)}
   .tl-step:last-child{border-right:0}
   .tl-step .n{font-family:'Fraunces',serif;font-weight:900;font-size:64px;letter-spacing:-.02em;line-height:1;color:var(--ink);margin-bottom:14px;display:flex;align-items:baseline;gap:6px}
@@ -364,8 +375,9 @@
   .qr-stat-v{font-family:'Fraunces',serif;font-weight:900;font-size:54px;line-height:1;letter-spacing:-.02em;display:flex;align-items:baseline;gap:6px}
   .qr-stat-v .qr-stat-unit{font-size:18px;color:var(--amber-2);font-weight:500;font-style:italic}
   #qrStatProb.is-high .qr-stat-v{color:var(--green)}
-  #qrStatProb.is-mid .qr-stat-v{color:var(--amber-2)}
-  #qrStatProb.is-low .qr-stat-v{color:var(--ink)}
+  #qrStatProb.is-mid .qr-stat-v{color:#a3b300}
+  #qrStatProb.is-warn .qr-stat-v{color:var(--amber-2)}
+  #qrStatProb.is-low .qr-stat-v{color:#b91c1c}
   .quiz-result-form{display:grid;grid-template-columns:1fr 1.2fr;gap:28px;align-items:start;padding:24px;background:var(--paper-2);border-radius:6px}
   .qr-form-l h4{font-family:'Fraunces',serif;font-weight:700;font-size:20px;letter-spacing:-.01em;margin:0 0 8px;line-height:1.15}
   .qr-form-l p{margin:0;color:#374151;font-size:13.5px;line-height:1.5}
@@ -548,6 +560,7 @@
         <span><span class="tk">✓</span> Предодобрение от 3 минут</span>
         <span><span class="tk">✓</span> Опыт исполнения не нужен</span>
         <span><span class="tk">✓</span> Оплата от третьих лиц</span>
+        <span><span class="tk">✓</span> Без поручительства <small style="color:var(--muted);font-weight:400" title="Бывают банки, готовые работать без поручительства — подбираем индивидуально">?</small></span>
         <span><span class="tk">✓</span> <strong>0 ₽</strong> услуги брокера</span>
       </div>
 
@@ -663,7 +676,7 @@
     <div class="sec-head">
       <div class="num">02 · Сравнение</div>
       <h2>Брокер Модус <span class="ital">vs</span> прямое обращение в банк</h2>
-      <div class="aside">Восемь ключевых параметров — без иконок там, где сравнение числовое.</div>
+      <div class="aside">Девять ключевых параметров — без иконок там, где сравнение числовое.</div>
     </div>
     <div class="cmp">
       <div class="cmp-head">
@@ -689,12 +702,17 @@
       <div class="cmp-row">
         <div class="lbl">Депозит / залог</div>
         <div class="us"><span class="ck">✓</span><span>Без депозита</span></div>
-        <div class="them"><span class="x">✗</span><span>Часто требуется или блокировка средств</span></div>
+        <div class="them"><span class="x">✗</span><span>Часто требуется или <strong>блокировка средств на счёте</strong></span></div>
+      </div>
+      <div class="cmp-row">
+        <div class="lbl">Поручительство</div>
+        <div class="us"><span class="ck">✓</span><span>Бывает без поручительства — подбираем банк под ситуацию</span></div>
+        <div class="them"><span class="x">✗</span><span>Часто обязательно личное поручительство собственника</span></div>
       </div>
       <div class="cmp-row">
         <div class="lbl">Оплата от третьих лиц</div>
-        <div class="us"><span>Да</span></div>
-        <div class="them"><span>Как правило, нет</span></div>
+        <div class="us"><span>Принимаем оплату от материнской / партнёра</span></div>
+        <div class="them"><span>Часто запрещено — оплата только со своего р/с</span></div>
       </div>
       <div class="cmp-row">
         <div class="lbl">Количество банков</div>
@@ -728,35 +746,41 @@
       <div class="case-card">
         <div class="case-eyebrow">
           <span class="case-law">44-ФЗ</span>
-          <span class="case-meta">ВНЕДРЕНИЕ ERP</span>
+          <span class="case-meta">SAAS-КОНТРАКТ</span>
         </div>
-        <div class="case-subsegment">Системный интегратор</div>
-        <div class="case-amount">37<span class="cur">млн ₽</span></div>
-        <div class="case-type">Внедрение системы для крупного государственного заказчика.</div>
-        <div class="case-time">⚡ Выдано за 3 часа</div>
-        <div class="case-note">«Без опыта исполнения контрактов»</div>
+        <div class="case-tender">Тендер · <strong>26 млн ₽</strong></div>
+        <div class="case-subsegment">Разработчик SaaS</div>
+        <div class="case-amount">2.6<span class="cur">млн ₽</span></div>
+        <div class="case-percent">10% от тендера · БГ исполнения</div>
+        <div class="case-type">Молодая IT-компания, без материальных активов.</div>
+        <div class="case-time">⚡ Выдано за 1.5 часа</div>
+        <div class="case-note">«Без материальных активов»</div>
       </div>
       <div class="case-card">
         <div class="case-eyebrow">
           <span class="case-law">223-ФЗ</span>
           <span class="case-meta">ИТ-АУТСОРСИНГ</span>
         </div>
+        <div class="case-tender">Тендер · <strong>180 млн ₽</strong></div>
         <div class="case-subsegment">Сервисная IT-компания</div>
-        <div class="case-amount">13<span class="cur">млн ₽</span></div>
-        <div class="case-type">Контракт на сопровождение и поддержку IT-инфраструктуры.</div>
-        <div class="case-time">⚡ Выдано за 2 часа</div>
-        <div class="case-note">«После отказа двух банков»</div>
+        <div class="case-amount">27<span class="cur">млн ₽</span></div>
+        <div class="case-percent">15% от тендера · БГ исполнения</div>
+        <div class="case-type">Длинный сервисный контракт.</div>
+        <div class="case-time">⚡ Выдано за 9 часов</div>
+        <div class="case-note">«Длинный сервисный контракт»</div>
       </div>
       <div class="case-card">
         <div class="case-eyebrow">
           <span class="case-law">44-ФЗ</span>
-          <span class="case-meta">SAAS-КОНТРАКТ</span>
+          <span class="case-meta">ВНЕДРЕНИЕ ERP</span>
         </div>
-        <div class="case-subsegment">Разработчик SaaS</div>
-        <div class="case-amount">2.5<span class="cur">млн ₽</span></div>
-        <div class="case-type">Подписка на облачное решение для регионального ведомства.</div>
-        <div class="case-time">⚡ Выдано за 1.5 часа</div>
-        <div class="case-note">«Без материальных активов»</div>
+        <div class="case-tender">Тендер · <strong>540 млн ₽</strong></div>
+        <div class="case-subsegment">Системный интегратор</div>
+        <div class="case-amount">108<span class="cur">млн ₽</span></div>
+        <div class="case-percent">20% от тендера · БГ исполнения</div>
+        <div class="case-type">Продукт в реестре российского ПО.</div>
+        <div class="case-time">⚡ Выдано за 30 часов</div>
+        <div class="case-note">«Продукт в реестре российского ПО»</div>
       </div>
     </div>
     <div class="cases-foot">Данные обезличены в соответствии с условиями NDA. Полный реестр выпущенных БГ доступен по запросу.</div>
@@ -800,7 +824,6 @@
           <div class="pills" id="lawPills">
             <button class="on" data-law="44">44-ФЗ</button>
             <button data-law="223">223-ФЗ</button>
-            <button data-law="615">615-ПП</button>
             <button data-law="comm">Коммерция</button>
           </div>
         </div>
@@ -897,7 +920,7 @@
     </div>
 
     <div class="timeline">
-      <div class="tl-bar">
+      <div class="tl-bar" style="display:none">
         <div class="tl-tick">
           <div class="dot"></div>
           <div class="time">00:00 · ЗАЯВКА</div>
@@ -916,26 +939,36 @@
         </div>
       </div>
 
-      <div class="tl-grid">
+      <div class="tl-grid tl-grid-6">
         <div class="tl-step">
           <div class="n">01<span class="of"></span></div>
-          <h4>Заявка и аудит</h4>
-          <p>Получаем данные по тендеру (номер или ссылку). Проверяем требования заказчика, специфику контракта и документации. Озвучиваем предварительную стоимость.</p>
+          <h4>Заявка и расчёт</h4>
+          <p>Получаем данные по тендеру (номер или ссылку). Проверяем требования заказчика, специфику контракта. Озвучиваем предварительную стоимость.</p>
         </div>
         <div class="tl-step">
           <div class="n">02</div>
-          <h4>Подбор банка</h4>
-          <p>Анализируем финансовое состояние вашей компании и подаём заявку сразу в 47 аккредитованных банков. Подбираем лучшие условия по ставке и скорости.</p>
+          <h4>Документы и подбор банка</h4>
+          <p>Получаем 2 документа от вас. Подаём заявку сразу в 47 аккредитованных банков, подбираем лучшие условия.</p>
         </div>
         <div class="tl-step">
           <div class="n">03</div>
-          <h4>Одобрение</h4>
-          <p>Согласовываем макет гарантии с вами и заказчиком. Снимаем все разногласия по формулировкам. После предоставления документов и подписания заявки — выдаём проект БГ и счёт.</p>
+          <h4>Проект БГ и счёт</h4>
+          <p>После одобрения банком выдаём проект банковской гарантии и счёт на оплату комиссии банка.</p>
         </div>
         <div class="tl-step">
           <div class="n">04</div>
-          <h4>Выпуск</h4>
-          <p>Вы подписываете договор в ЭДО, оплачиваете комиссию банку. БГ попадает в реестр. Готово — контракт можно подписывать.</p>
+          <h4>Согласовываем все правки</h4>
+          <p>Согласовываем макет гарантии с вами и заказчиком, снимаем разногласия по формулировкам — до подписания.</p>
+        </div>
+        <div class="tl-step">
+          <div class="n">05</div>
+          <h4>Подписание и оплата</h4>
+          <p>Вы подписываете договор в ЭДО, оплачиваете комиссию банку <strong>с любого расчётного счёта</strong>.</p>
+        </div>
+        <div class="tl-step">
+          <div class="n">06</div>
+          <h4>Реестр</h4>
+          <p>БГ попадает в реестр банковских гарантий. Мы присылаем номер реестровой записи. Готово — контракт можно подписывать.</p>
         </div>
       </div>
 
@@ -1013,7 +1046,6 @@
           <span class="bank-chip">Т-Банк</span>
           <span class="bank-chip">Совкомбанк</span>
           <span class="bank-chip">Промсвязьбанк</span>
-          <span class="bank-chip">Банк «Открытие»</span>
           <span class="bank-chip">Райффайзенбанк</span>
           <span class="bank-chip">Московский Кредитный Банк</span>
         </div>
@@ -1022,12 +1054,13 @@
         <div class="gh"><span class="gn">Топ-50</span><span class="gs">по активам · banki.ru</span></div>
         <div class="banks-list">
           <span class="bank-chip">Уралсиб</span>
-          <span class="bank-chip">Ак Барс</span>
+          <span class="bank-chip">АК Барс Банк</span>
           <span class="bank-chip">Банк «Санкт-Петербург»</span>
           <span class="bank-chip">Абсолют Банк</span>
           <span class="bank-chip">Зенит</span>
-          <span class="bank-chip">МТС-Банк</span>
-          <span class="bank-chip">ОТП Банк</span>
+          <span class="bank-chip">Банк ДОМ.РФ</span>
+          <span class="bank-chip">Металлинвестбанк</span>
+          <span class="bank-chip">ПСБ</span>
           <span class="bank-chip">Банк «Левобережный»</span>
           <span class="bank-chip">СДМ-Банк</span>
           <span class="bank-chip">Россия</span>
@@ -1037,17 +1070,14 @@
         <div class="gh"><span class="gn">Прочие</span><span class="gs">партнёры</span></div>
         <div class="banks-list">
           <span class="bank-chip">Реалист Банк</span>
-          <span class="bank-chip">Металлинвестбанк</span>
-          <span class="bank-chip">Энергобанк</span>
           <span class="bank-chip">Банк «Авангард»</span>
           <span class="bank-chip">Кубань Кредит</span>
-          <span class="bank-chip">Тимер Банк</span>
-          <span class="bank-chip more">+ ещё 21 банк</span>
+          <span class="bank-chip more">+ ещё 22 банка</span>
         </div>
       </div>
     </div>
     <div class="banks-foot">
-      <div>Все банки входят в Перечень, одобренный Минфином России. Также работаем с банками, аккредитованными Росатомом, Россетями, Лукойлом, Газпромом и другими крупными структурами.</div>
+      <div>Все банки входят в Перечень, одобренный Минфином России. Также работаем с банками, аккредитованными <strong>Росатомом, Россетями, Лукойлом, Газпромом, РЖД, Транснефтью, Ростелекомом, МегаФоном, Норильским никелем</strong> и другими крупными структурами.</div>
       <div class="src">Актуально на 05.2026</div>
     </div>
   </div>
@@ -1070,7 +1100,7 @@
       <div class="why-card">
         <div class="gn">11</div>
         <h4>Лет на рынке</h4>
-        <p>Работаем с 2015 года (ООО «Модус», ОГРН 1155262000376). Оформили тысячи банковских гарантий для компаний любого размера.</p>
+        <p>Работаем с 2015 года (ООО «Модус», ОГРН 1155262000376). Оформили десятки тысяч банковских гарантий для компаний любого размера.</p>
       </div>
       <div class="why-card">
         <div class="gn">100<span style="font-size:32px">%</span></div>
@@ -1080,7 +1110,7 @@
       <div class="why-card">
         <div class="gn">0</div>
         <h4>Срывов срока подачи</h4>
-        <p>Гарантируем выпуск БГ к сроку подачи. При отказе одного банка моментально перебрасываем заявку в следующий из 47 аккредитованных. Срок подачи в тендер не сдвигается.</p>
+        <p>Гарантируем выпуск БГ к сроку подачи. При отказе одного банка моментально перебрасываем заявку в следующий из 47 аккредитованных.</p>
       </div>
     </div>
   </div>
@@ -1266,7 +1296,7 @@
     <div class="faq-list">
       <details class="faq" open>
         <summary><span>Сколько стоят ваши услуги для меня?</span><span class="pl"></span></summary>
-        <div class="ans">Услуги брокера для вас — <strong style="color:var(--amber-2)">0 ₽</strong>. Мы работаем с банками по агентским договорам и получаем вознаграждение напрямую от банка-партнёра. Вы оплачиваете только комиссию банка за выпуск гарантии — по тарифу банка, без наценки. Это не повышает ставку: банк фиксирует условия по своим скоринговым моделям независимо от того, пришли вы напрямую или через брокера. Через нас вы получаете доступ сразу к 47 банкам и выбор лучшей ставки — бесплатно.</div>
+        <div class="ans">Вы платите только банку — по его тарифу, без любых наценок. Брокеру ничего платить не надо: мы получаем своё вознаграждение от банка по агентскому договору. Ставка для вас от этого не растёт.<br><br>Через нас вы получаете доступ сразу к 47 банкам и подбор лучшей ставки — <strong style="color:var(--amber-2)">бесплатно</strong>.</div>
       </details>
       <details class="faq">
         <summary><span>Не нужен ли залог или материальные активы?</span><span class="pl"></span></summary>
@@ -1441,6 +1471,31 @@ function recalc(){
 });
 recalc();
 
+// ─────── Nav dropdown: click + keyboard support, soft close on leave ───────
+(function(){
+  const drop = document.querySelector('.nav-drop');
+  if (!drop) return;
+  const trigger = drop.querySelector('.nav-drop-trigger');
+  let timer;
+  drop.addEventListener('mouseleave', () => {
+    timer = setTimeout(() => drop.classList.remove('open'), 250);
+  });
+  drop.addEventListener('mouseenter', () => clearTimeout(timer));
+  trigger.addEventListener('click', e => {
+    e.preventDefault();
+    drop.classList.toggle('open');
+  });
+  trigger.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' '){
+      e.preventDefault();
+      drop.classList.toggle('open');
+    }
+  });
+  document.addEventListener('click', e => {
+    if (!drop.contains(e.target)) drop.classList.remove('open');
+  });
+})();
+
 // ─────── Quiz: 4-step wizard + result ───────
 (function(){
   const card = document.getElementById('quizCard');
@@ -1540,32 +1595,23 @@ recalc();
     });
   }
   function calcResult(){
-    let prob = 90;
-    let banks = 47;
     const sum = Number(String(state.quizSum||'').replace(/\D/g,'')) || 0;
 
-    // Age penalties
-    if (state.age === 'lt6')      { prob -= 5;  banks -= 5; }
-    else if (state.age === '6m1y'){ prob -= 2;  banks -= 2; }
-    // Revenue
-    if (state.revenue === 'lt10') { prob -= 5;  banks -= 5; }
-    // Profit
-    if (state.profit === 'loss')  { prob -= 15; banks -= 15; }
-    else if (state.profit === 'zero'){ prob -= 5; banks -= 4; }
-    // Sum > 200 млн
-    if (sum > 200000000)          { prob -= 10; banks -= 10; }
-    // Refusals
-    if (state.refusals === '1-2') { prob -= 5;  banks -= 5; }
-    else if (state.refusals === 'many'){ prob -= 20; banks -= 15; }
-    // Red flags
-    if (state.redflags === 'minor'){ prob -= 10; banks -= 7; }
-    else if (state.redflags === 'major'){ prob -= 30; banks -= 20; }
-    // Hot urgency + young company → small extra
-    if (state.urgency === 'hot' && state.age === 'lt6'){ prob -= 5; banks -= 5; }
-    // Note: no penalty for "no experience" — it's our USP
+    // Count red flags (per pravki-saita-2.md, 6.3)
+    let flags = 0;
+    if (state.age === 'lt6') flags++;                          // Компания младше 1 года (lt6 — самый молодой)
+    if (state.refusals === 'many') flags++;                    // 3+ отказов от банков
+    if (state.profit === 'loss') flags++;                      // Убыток в последнем периоде
+    if (sum > 100000000 && state.age !== 'gt1') flags++;       // Большая сумма + молодая компания
+    if (state.experience === 'none' && sum > 50000000) flags++; // Нет опыта + сумма > 50 млн
 
-    prob = Math.max(30, Math.min(95, prob));
-    banks = Math.max(5, Math.min(47, banks));
+    // New probability scale by flag count
+    function rand(min, max){ return Math.floor(Math.random() * (max - min + 1)) + min; }
+    let prob, banks;
+    if (flags >= 3)      { prob = rand(5, 15);  banks = rand(3, 8); }
+    else if (flags === 2){ prob = rand(30, 60); banks = rand(10, 22); }
+    else if (flags === 1){ prob = rand(65, 75); banks = rand(28, 38); }
+    else                 { prob = rand(85, 95); banks = rand(40, 47); }
 
     document.getElementById('qrProb').textContent = prob;
     document.getElementById('qrBanks').textContent = banks;
@@ -1573,10 +1619,24 @@ recalc();
     document.getElementById('qrRate').textContent = `${rate.lo}%–${rate.hi}%`;
 
     const probWrap = document.getElementById('qrStatProb');
-    probWrap.classList.remove('is-high','is-mid','is-low');
-    if (prob >= 70) probWrap.classList.add('is-high');
-    else if (prob >= 40) probWrap.classList.add('is-mid');
-    else probWrap.classList.add('is-low');
+    probWrap.classList.remove('is-high','is-mid','is-low','is-warn');
+    if (prob >= 80) probWrap.classList.add('is-high');         // зелёный
+    else if (prob >= 60) probWrap.classList.add('is-mid');     // янтарный
+    else if (prob >= 30) probWrap.classList.add('is-warn');    // тёмно-янтарный
+    else probWrap.classList.add('is-low');                     // нейтральный
+
+    // Soft CTA on low probability
+    const submitBtn = document.querySelector('.qr-form-r button[type="submit"]');
+    const formTitle = document.querySelector('.qr-form-l h4');
+    if (submitBtn && formTitle){
+      if (prob < 40){
+        submitBtn.innerHTML = 'Запросить консультацию <span class="arr">→</span>';
+        formTitle.textContent = 'Обсудим, как поднять шансы';
+      } else {
+        submitBtn.innerHTML = 'Получить подборку <span class="arr">→</span>';
+        formTitle.textContent = 'Куда прислать подборку банков со ставками?';
+      }
+    }
   }
 
   document.getElementById('quizNext').addEventListener('click', () => {
