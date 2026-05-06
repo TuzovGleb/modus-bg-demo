@@ -501,6 +501,78 @@
     .promo::before{display:none}
     .ftr-bot{flex-direction:column;gap:8px}
   }
+
+  /* ─── Lead-magnet (checklist) ─── */
+  .lm-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:start}
+  .lm-cover-wrap{display:flex;justify-content:center}
+  .lm-cover{position:relative;background:var(--paper-2);border:1px solid var(--line-soft);border-radius:6px;padding:30px 28px 24px;width:100%;max-width:380px;aspect-ratio:.71/1;display:flex;flex-direction:column;gap:16px;overflow:hidden;box-shadow:0 12px 32px -16px rgba(14,17,22,.18)}
+  .lm-cover-disc{position:absolute;top:-90px;right:-90px;width:240px;height:240px;background:var(--amber-soft);border-radius:50%;opacity:.85;z-index:0}
+  .lm-cover > *{position:relative;z-index:1}
+  .lm-cover-eyebrow{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
+  .lm-cover-brand{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.06em;color:var(--ink);display:flex;align-items:center;gap:8px;margin-top:-4px}
+  .lm-pin{width:7px;height:9px;background:var(--amber);display:inline-block;clip-path:polygon(50% 100%,0 38%,0 0,100% 0,100% 38%);flex-shrink:0}
+  .lm-cover-h{font-family:'Fraunces',serif;font-weight:900;font-size:30px;line-height:.98;letter-spacing:-.02em;margin-top:auto;color:var(--ink)}
+  .lm-cover-h .ital{font-style:italic;font-weight:500;color:var(--amber-2)}
+  .lm-cover-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .lm-stat{background:var(--ink);color:var(--paper);padding:14px 12px;border-radius:4px;display:flex;flex-direction:column;gap:6px}
+  .lm-stat-v{font-family:'Fraunces',serif;font-weight:900;font-style:italic;color:var(--amber-2);font-size:24px;line-height:1;letter-spacing:-.02em}
+  .lm-stat-l{font-family:'JetBrains Mono',monospace;font-size:7.5px;letter-spacing:.14em;color:#a8b1c2;text-transform:uppercase;line-height:1.35}
+  .lm-cover-foot{display:flex;align-items:baseline;justify-content:space-between;border-top:1px solid rgba(14,17,22,.15);padding-top:10px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+  .lm-cover-foot-l{font-family:'Fraunces',serif;font-weight:900;font-size:18px;letter-spacing:-.01em;color:var(--ink);text-transform:none}
+
+  .lm-content{display:flex;flex-direction:column;gap:24px}
+  .lm-bullets{display:flex;flex-direction:column;gap:14px}
+  .lm-bul-row{display:flex;gap:12px;font-size:15.5px;line-height:1.5;color:#374151}
+  .lm-bul-row strong{color:var(--ink);font-weight:700}
+  .lm-bul-i{width:22px;height:22px;background:var(--green);color:#fff;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:12px;flex-shrink:0;margin-top:1px}
+
+  .lm-form{position:relative;background:var(--ink);color:var(--paper);border-radius:6px;padding:24px 24px 20px;display:flex;flex-direction:column;gap:10px}
+  .lm-form-h{font-family:'Fraunces',serif;font-weight:900;font-size:22px;line-height:1.1;letter-spacing:-.01em;margin:0 0 4px}
+  .lm-form-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:stretch}
+  .lm-form input[type="email"]{height:48px;background:#fff;border:1px solid #2c3340;color:var(--ink);font:inherit;font-size:15px;padding:0 16px;border-radius:4px;outline:none}
+  .lm-form input[type="email"]:focus{border-color:var(--amber);outline:2px solid var(--amber-soft)}
+  .lm-form input[type="email"]::placeholder{color:#7d869b}
+  .lm-form button[type="submit"]{height:48px;background:var(--amber);color:var(--ink);border:0;font:inherit;font-weight:800;font-size:14.5px;padding:0 22px;border-radius:4px;cursor:pointer;display:flex;align-items:center;gap:10px;white-space:nowrap}
+  .lm-form button[type="submit"]:hover{background:#c97a30}
+  .lm-form button[type="submit"] .arr{font-family:'Fraunces',serif;font-size:20px}
+  .lm-form .consent.consent-dark{font-size:11.5px;line-height:1.5}
+  .lm-honeypot{position:absolute !important;left:-9999px !important;top:auto !important;width:1px !important;height:1px !important;opacity:0 !important;pointer-events:none !important;border:0 !important;padding:0 !important;margin:0 !important}
+
+  .lm-thanks{background:var(--paper-2);border:1px solid var(--line-soft);border-radius:6px;padding:28px 26px}
+  .lm-thanks-i{width:38px;height:38px;background:var(--green);color:#fff;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:18px;margin-bottom:14px}
+  .lm-thanks-h{font-family:'Fraunces',serif;font-weight:900;font-size:22px;line-height:1.15;letter-spacing:-.01em;margin:0 0 12px;color:var(--ink)}
+  .lm-thanks-email{color:var(--amber-2);font-style:italic;font-weight:500;word-break:break-all}
+  .lm-thanks-p{font-size:14.5px;line-height:1.55;color:#374151;margin:0 0 10px}
+  .lm-thanks-p strong{color:var(--ink);font-weight:700}
+  .lm-thanks-cta{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);border:0;border-radius:4px;padding:13px 20px;font:inherit;font-weight:700;font-size:14px;cursor:pointer;margin-top:6px}
+  .lm-thanks-cta:hover{background:var(--amber);color:var(--ink)}
+  .lm-thanks-cta .arr{font-family:'Fraunces',serif;font-size:18px}
+
+  .lm-foot{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;color:var(--muted);line-height:1.5}
+
+  /* News (footer checklist form) */
+  .news-form{display:flex;flex-direction:column;gap:0;position:relative}
+  .news-thanks{font-size:13px;line-height:1.5;color:#a8b1c2;padding:12px 14px;border-radius:4px;background:rgba(255,255,255,.04);border-left:2px solid var(--green)}
+  .news-thanks strong{color:#fff;font-weight:700}
+
+  @media (max-width:1100px){
+    .lm-grid{grid-template-columns:1fr;gap:36px}
+    .lm-cover{max-width:420px}
+  }
+  @media (max-width:760px){
+    .lm-cover{padding:24px 20px 20px;aspect-ratio:auto}
+    .lm-cover-h{font-size:24px}
+    .lm-cover-disc{top:-70px;right:-70px;width:180px;height:180px}
+    .lm-stat{padding:11px 9px}
+    .lm-stat-v{font-size:20px}
+    .lm-stat-l{font-size:7px}
+    .lm-form{padding:20px 18px 16px}
+    .lm-form-h{font-size:19px}
+    .lm-form-row{grid-template-columns:1fr}
+    .lm-form button[type="submit"]{justify-content:center}
+    .lm-thanks{padding:22px 20px}
+    .lm-thanks-h{font-size:19px}
+  }
 </style>
 </head>
 <body>
@@ -1103,6 +1175,60 @@
   </div>
 </section>
 
+<!-- CHECKLIST LEAD-MAGNET -->
+<section class="s" id="checklist" style="padding-top:60px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">Бонус · бесплатно</div>
+      <h2><span class="ital">12 пунктов</span> готовности — банк одобрит БГ за <span class="ital">1.5 часа</span></h2>
+      <div class="aside">PDF на 5 страниц: что собрать, как закрыть отказ, какие банки выдают новичкам.</div>
+    </div>
+    <div class="lm-grid">
+      <div class="lm-cover-wrap">
+        <div class="lm-cover" aria-hidden="true">
+          <div class="lm-cover-eyebrow">Чек-лист · 12 пунктов · бесплатно</div>
+          <div class="lm-cover-brand"><span class="lm-pin"></span>Брокер банковских гарантий · с 2015</div>
+          <div class="lm-cover-h">Как подготовить компанию, чтобы банк одобрил БГ <span class="ital">за 1.5 часа</span></div>
+          <div class="lm-cover-stats">
+            <div class="lm-stat"><div class="lm-stat-v">12</div><div class="lm-stat-l">Пунктов готовности</div></div>
+            <div class="lm-stat"><div class="lm-stat-v">47</div><div class="lm-stat-l">Банков-партнёров</div></div>
+            <div class="lm-stat"><div class="lm-stat-v">1.5</div><div class="lm-stat-l">Часа на выдачу</div></div>
+          </div>
+          <div class="lm-cover-foot"><span class="lm-cover-foot-l">Модус</span><span class="lm-cover-foot-r">modus-bg.ru</span></div>
+          <div class="lm-cover-disc" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="lm-content">
+        <div class="lm-bullets">
+          <div class="lm-bul-row"><span class="lm-bul-i">✓</span><div><strong>12 пунктов готовности</strong> — что собрать заранее по 4 блокам: юридический, финансовый, опыт, технические мелочи.</div></div>
+          <div class="lm-bul-row"><span class="lm-bul-i">✓</span><div><strong>Документы под 44-ФЗ, 223-ФЗ, 615-ПП</strong> — единый список, без хождения по банкам.</div></div>
+          <div class="lm-bul-row"><span class="lm-bul-i">✓</span><div><strong>Топ-3 причины отказа банков</strong> — отметка о недостоверности в ЕГРЮЛ, кредитная нагрузка собственника, молодая компания. По каждой — пошаговое закрытие.</div></div>
+        </div>
+        <form class="lm-form" id="lmFormMain" onsubmit="return modusLeadMagnet(event, this)" autocomplete="on">
+          <div class="lm-form-h">Скачать чек-лист — пришлём на email</div>
+          <div class="lm-form-row">
+            <input type="email" name="email" placeholder="email@company.ru" required autocomplete="email" />
+            <button type="submit">Получить чек-лист <span class="arr">→</span></button>
+          </div>
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="lm-honeypot" />
+          <label class="consent consent-dark" style="margin-top:6px">
+            <input type="checkbox" name="consent" required checked>
+            <span>Я даю согласие на <a href="personal-data-consent.html" target="_blank" rel="noopener">обработку персональных данных</a> и ознакомлен(а) с <a href="privacy.html" target="_blank" rel="noopener">Политикой конфиденциальности</a>.</span>
+          </label>
+        </form>
+        <div class="lm-thanks" id="lmThanksMain" hidden>
+          <div class="lm-thanks-i">✓</div>
+          <h4 class="lm-thanks-h">Чек-лист отправлен на <span class="lm-thanks-email"></span></h4>
+          <p class="lm-thanks-p">Проверьте почту в течение 1–2 минут. Не пришло — посмотрите в «Спам» и добавьте <strong>modus@modusbg-nn.ru</strong> в адресную книгу.</p>
+          <p class="lm-thanks-p">Хотите консультацию прямо сейчас?</p>
+          <button type="button" class="lm-thanks-cta" data-open="calc">Заказать звонок <span class="arr">→</span></button>
+        </div>
+        <div class="lm-foot">PDF · 5 страниц · 53 КБ. Email — только для отправки чек-листа и одного follow-up в течение недели. Без рассылки.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- BANKS -->
 <section class="s">
   <div class="wrap">
@@ -1463,12 +1589,18 @@
     <div class="news">
       <h5>Чек-лист в подарок</h5>
       <div style="font-size:13.5px;line-height:1.55;color:#a8b1c2;margin-bottom:14px">Как подготовить компанию, чтобы банк одобрил БГ за 1.5 часа.</div>
-      <input type="email" placeholder="email"/>
-      <button>Скачать чек-лист</button>
-      <label class="consent consent-dark" style="margin-top:8px">
-        <input type="checkbox" name="consent" required checked>
-        <span>Я даю согласие на <a href="personal-data-consent.html" target="_blank" rel="noopener">обработку персональных данных</a> и ознакомлен(а) с <a href="privacy.html" target="_blank" rel="noopener">Политикой конфиденциальности</a>.</span>
-      </label>
+      <form class="news-form" id="lmFormFooter" onsubmit="return modusLeadMagnet(event, this)" autocomplete="on">
+        <input type="email" name="email" placeholder="email" required autocomplete="email"/>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="lm-honeypot" />
+        <button type="submit">Скачать чек-лист</button>
+        <label class="consent consent-dark" style="margin-top:8px">
+          <input type="checkbox" name="consent" required checked>
+          <span>Я даю согласие на <a href="personal-data-consent.html" target="_blank" rel="noopener">обработку персональных данных</a> и ознакомлен(а) с <a href="privacy.html" target="_blank" rel="noopener">Политикой конфиденциальности</a>.</span>
+        </label>
+      </form>
+      <div class="news-thanks" id="lmThanksFooter" hidden>
+        <strong>✓ Готово.</strong> Отправили чек-лист на <span class="news-thanks-email"></span>. Проверьте «Входящие» и «Спам».
+      </div>
     </div>
   </div>
 
@@ -1821,6 +1953,48 @@ recalc();
   window.addEventListener('resize', update);
   update();
 })();
+
+// ─────── Lead-magnet (checklist) — demo handler ───────
+// Backend wiring: see modus-handoff/instrukciya-cheklist-leadmagnet.md
+window.modusLeadMagnet = function(event, form){
+  event.preventDefault();
+  // Honeypot: bots fill this hidden field, real users don't see it
+  const trap = form.querySelector('input[name="website"]');
+  if (trap && trap.value) return false;
+  const emailEl = form.querySelector('input[name="email"]');
+  const email = (emailEl?.value || '').trim();
+  if (!email) return false;
+
+  // Find the matching thank-you block: prefer same parent (id pattern lmFormX → lmThanksX),
+  // fallback to next sibling with .lm-thanks / .news-thanks
+  let thanks = null;
+  if (form.id && form.id.startsWith('lmForm')){
+    thanks = document.getElementById('lmThanks' + form.id.slice(6));
+  }
+  if (!thanks){
+    thanks = form.parentElement?.querySelector('.lm-thanks, .news-thanks');
+  }
+
+  if (thanks){
+    const span = thanks.querySelector('.lm-thanks-email, .news-thanks-email');
+    if (span) span.textContent = email;
+    form.style.display = 'none';
+    thanks.hidden = false;
+    // Wire "Заказать звонок" → opens calc modal (only once per CTA)
+    thanks.querySelectorAll('[data-open="calc"]').forEach(btn => {
+      if (btn._wired) return;
+      btn._wired = true;
+      btn.addEventListener('click', () => {
+        const trigger = document.getElementById('calcCtaBtn');
+        if (trigger) trigger.click();
+      });
+    });
+  } else {
+    alert('Чек-лист отправлен на ' + email);
+    form.reset();
+  }
+  return false;
+};
 </script>
 </body>
 </html>
