@@ -257,7 +257,9 @@
   .promo h3{font-family:'Fraunces',serif;font-weight:900;font-size:64px;line-height:.95;letter-spacing:-.025em;margin:0 0 18px;max-width:680px}
   .promo h3 .ital{font-style:italic;font-weight:500}
   .promo p{margin:0 0 28px;font-size:17px;line-height:1.5;max-width:600px;color:#3a2810}
-  .btn-promo{display:inline-flex;align-items:center;gap:14px;background:var(--ink);color:var(--paper);padding:18px 26px;border-radius:4px;font-weight:800;font-size:15.5px}
+  .btn-promo{display:inline-flex;align-items:center;gap:14px;background:var(--ink);color:var(--paper);padding:18px 26px;border:0;border-radius:4px;font:inherit;font-weight:800;font-size:15.5px;cursor:pointer;transition:background .15s ease}
+  .btn-promo:hover{background:#1f2630}
+  .btn-promo:focus-visible{outline:2px solid var(--paper);outline-offset:2px}
   .btn-promo .arr{font-family:'Fraunces',serif;font-size:22px}
   .promo-meta{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3a2810;writing-mode:vertical-rl;transform:rotate(180deg);position:relative;padding:16px 0;border-top:1px solid #3a2810;border-bottom:1px solid #3a2810}
 
@@ -451,9 +453,9 @@
   .ftr .brand-bot .ital{font-style:italic;font-weight:500;color:var(--amber)}
   .ftr .desc{font-size:13px;line-height:1.6;color:#a8b1c2;max-width:340px}
   .ftr .news{}
-  .ftr .news input{height:46px;background:transparent;border:1px solid #2c3340;color:var(--paper);font:inherit;padding:0 14px;width:100%;border-radius:4px}
-  .ftr .news input::placeholder{color:#7d869b}
-  .ftr .news button{margin-top:8px;height:46px;background:var(--amber);color:var(--ink);border:0;font:inherit;font-weight:800;cursor:pointer;border-radius:4px;width:100%}
+  .ftr .news input[type="email"]{height:46px;background:transparent;border:1px solid #2c3340;color:var(--paper);font:inherit;padding:0 14px;width:100%;border-radius:4px}
+  .ftr .news input[type="email"]::placeholder{color:#7d869b}
+  .ftr .news button[type="submit"]{margin-top:8px;height:46px;background:var(--amber);color:var(--ink);border:0;font:inherit;font-weight:800;cursor:pointer;border-radius:4px;width:100%}
   .ftr-bot{display:flex;justify-content:space-between;border-top:1px solid #2c3340;margin-top:24px;padding-top:24px;color:#7d869b;font-size:12px}
   .ftr-bot a{color:#7d869b;text-decoration:underline;display:inline}
   .ftr-addr{margin-top:12px;font-size:12.5px;line-height:1.5;color:#a8b1c2}
@@ -988,10 +990,10 @@
         <div class="eyebrow" style="color:#3a2810;margin-bottom:18px">Действующая акция</div>
         <h3>Три БГ на участие — <span class="ital">даром</span></h3>
         <p>Оплачиваем комиссию банка за выдачу БГ на участие для первых 3 гарантий. Вы не платите ничего. Идеально для первого выхода на госзакупки или для компаний с небольшими тендерами.</p>
-        <a class="btn-promo">
+        <button class="btn-promo" type="button" id="promoCtaBtn" aria-haspopup="dialog">
           <span>Забрать 3 бесплатные гарантии</span>
           <span class="arr">→</span>
-        </a>
+        </button>
       </div>
       <div class="promo-meta">3 / 3 free</div>
     </div>
@@ -1433,6 +1435,32 @@
   </div>
 </div>
 
+<!-- MODAL: Promo (3 free BG) -->
+<div class="modal" id="promoModal" data-open="false" role="dialog" aria-modal="true" aria-labelledby="promoModalTitle">
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-card">
+    <button class="modal-close" data-modal-close aria-label="Закрыть">×</button>
+    <div class="m-eyebrow">Акция · 3 БГ на участие даром</div>
+    <h3 id="promoModalTitle">Активировать акцию</h3>
+    <p class="m-sub">Заявка на 3 бесплатные БГ на участие. Менеджер свяжется в течение 15 минут, пришлёт условия и форму рамочного договора.</p>
+    <form class="modal-form" onsubmit="event.preventDefault();alert('Заявка на акцию отправлена');document.getElementById('promoModal').setAttribute('data-open','false');this.reset();">
+      <input type="hidden" name="lead_source" value="promo-3-bg-free" />
+      <input type="text" name="name" placeholder="Имя" required minlength="2" maxlength="50" autocomplete="name" />
+      <input type="tel" name="phone" placeholder="Телефон" required pattern="[+0-9\s\-\(\)]{10,}" autocomplete="tel" />
+      <select name="channel">
+        <option value="call">Позвонить мне</option>
+        <option value="tg">Написать в Telegram</option>
+        <option value="max">Написать в Max</option>
+      </select>
+      <label class="consent">
+        <input type="checkbox" name="consent" required checked>
+        <span>Я даю согласие на <a href="personal-data-consent.html" target="_blank" rel="noopener">обработку персональных данных</a> и ознакомлен(а) с <a href="privacy.html" target="_blank" rel="noopener">Политикой конфиденциальности</a>.</span>
+      </label>
+      <button type="submit">Активировать акцию <span class="arr">→</span></button>
+    </form>
+  </div>
+</div>
+
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-cta" id="stickyCta">
   <a href="tel:+79680065222" class="scta-call" aria-label="Позвонить">
@@ -1618,6 +1646,29 @@ recalc();
     if (hidden){
       hidden.value = JSON.stringify({ law, type, amount: amt, days: d, rate: rateText });
     }
+    modal.setAttribute('data-open', 'true');
+    setTimeout(() => modal.querySelector('input[name="name"]')?.focus(), 50);
+  }
+  function close(){
+    modal.setAttribute('data-open', 'false');
+    if (lastFocused) lastFocused.focus();
+  }
+  if (trigger) trigger.addEventListener('click', open);
+  modal.querySelectorAll('[data-modal-close]').forEach(el => el.addEventListener('click', close));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.getAttribute('data-open') === 'true') close();
+  });
+})();
+
+// ─────── Modal: promo (3 free BG) ───────
+(function(){
+  const modal = document.getElementById('promoModal');
+  if (!modal) return;
+  const trigger = document.getElementById('promoCtaBtn');
+  let lastFocused = null;
+
+  function open(){
+    lastFocused = document.activeElement;
     modal.setAttribute('data-open', 'true');
     setTimeout(() => modal.querySelector('input[name="name"]')?.focus(), 50);
   }
