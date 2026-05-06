@@ -546,9 +546,12 @@
   .lm-thanks-email{color:var(--amber-2);font-style:italic;font-weight:500;word-break:break-all}
   .lm-thanks-p{font-size:14.5px;line-height:1.55;color:#374151;margin:0 0 10px}
   .lm-thanks-p strong{color:var(--ink);font-weight:700}
-  .lm-thanks-cta{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);border:0;border-radius:4px;padding:13px 20px;font:inherit;font-weight:700;font-size:14px;cursor:pointer;margin-top:6px}
+  .lm-thanks-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+  .lm-thanks-cta{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);border:0;border-radius:4px;padding:13px 20px;font:inherit;font-weight:700;font-size:14px;cursor:pointer}
   .lm-thanks-cta:hover{background:var(--amber);color:var(--ink)}
   .lm-thanks-cta .arr{font-family:'Fraunces',serif;font-size:18px}
+  .lm-thanks-dl{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:var(--ink);border:0;border-radius:4px;padding:13px 20px;font:inherit;font-weight:700;font-size:14px;cursor:pointer}
+  .lm-thanks-dl:hover{background:#c97a30}
 
   .lm-foot{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;color:var(--muted);line-height:1.5}
 
@@ -556,6 +559,8 @@
   .news-form{display:flex;flex-direction:column;gap:0;position:relative}
   .news-thanks{font-size:13px;line-height:1.5;color:#a8b1c2;padding:12px 14px;border-radius:4px;background:rgba(255,255,255,.04);border-left:2px solid var(--green)}
   .news-thanks strong{color:#fff;font-weight:700}
+  .news-thanks-dl{background:transparent;border:0;padding:0;color:var(--amber);font:inherit;font-size:inherit;text-decoration:underline;cursor:pointer}
+  .news-thanks-dl:hover{color:#fff}
 
   @media (max-width:1100px){
     .lm-grid{grid-template-columns:1fr;gap:36px}
@@ -653,7 +658,7 @@
         <span><span class="tk">✓</span> Предодобрение от 3 минут</span>
         <span><span class="tk">✓</span> Опыт исполнения не нужен</span>
         <span><span class="tk">✓</span> Оплата от третьих лиц</span>
-        <span><span class="tk">✓</span> Без поручительства <small style="color:var(--muted);font-weight:400" title="Бывают банки, готовые работать без поручительства — подбираем индивидуально">?</small></span>
+        <span><span class="tk">✓</span> Без поручительства</span>
         <span><span class="tk">✓</span> <strong>0 ₽</strong> услуги брокера</span>
       </div>
 
@@ -1456,7 +1461,7 @@
         </label>
       </form>
       <div class="news-thanks" id="lmThanksFooter" hidden>
-        <strong>✓ Готово.</strong> Отправили чек-лист на <span class="news-thanks-email"></span>. Проверьте «Входящие» и «Спам».
+        <strong>✓ Скачивание началось.</strong> Если файл не загрузился — <button type="button" class="news-thanks-dl" data-action="download-checklist">скачать ещё раз</button>. Email <span class="news-thanks-email"></span> сохранили.
       </div>
     </div>
   </div>
@@ -1628,7 +1633,18 @@
 })();
 
 // ─────── Lead-magnet (checklist) — demo handler ───────
-// Backend wiring: see modus-handoff/instrukciya-cheklist-leadmagnet.md
+// Triggers actual PDF download + swaps form for thank-you block.
+// Backend wiring (CRM, email follow-up, TG notifications):
+// see modus-handoff/leadmagnet/instrukciya-cheklist-leadmagnet.md
+function modusTriggerChecklistDownload(){
+  const a = document.createElement('a');
+  a.href = '/checklist.pdf';
+  a.download = 'Чек-лист — Модус.pdf';
+  a.style.display = 'none';
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => document.body.removeChild(a), 100);
+}
 window.modusLeadMagnet = function(event, form){
   event.preventDefault();
   // Honeypot: bots fill this hidden field, real users don't see it
@@ -1653,6 +1669,12 @@ window.modusLeadMagnet = function(event, form){
     if (span) span.textContent = email;
     form.style.display = 'none';
     thanks.hidden = false;
+    // Wire "Скачать ещё раз" buttons (idempotent)
+    thanks.querySelectorAll('[data-action="download-checklist"]').forEach(btn => {
+      if (btn._wired) return;
+      btn._wired = true;
+      btn.addEventListener('click', modusTriggerChecklistDownload);
+    });
     // Wire "Заказать звонок" → opens calc modal (only once per CTA)
     thanks.querySelectorAll('[data-open="calc"]').forEach(btn => {
       if (btn._wired) return;
@@ -1662,10 +1684,9 @@ window.modusLeadMagnet = function(event, form){
         if (trigger) trigger.click();
       });
     });
-  } else {
-    alert('Чек-лист отправлен на ' + email);
-    form.reset();
   }
+  // Trigger the actual file download
+  modusTriggerChecklistDownload();
   return false;
 };
 </script>

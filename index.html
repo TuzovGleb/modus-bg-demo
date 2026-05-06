@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Модус — Банковские гарантии для бизнеса | От 1.5 часов</title>
-<meta name="description" content="Гарантии по 44-ФЗ, 223-ФЗ, 615-ПП, валютные, таможенные, в пользу ФНС. 47 аккредитованных банков. Выдача от 1.5 часов, ставка от 1.7% годовых." />
+<meta name="description" content="Гарантии по 44-ФЗ, 223-ФЗ, 615-ПП, таможенные и коммерческие. 47 аккредитованных банков. Выдача от 1.5 часов, ставка от 1.7% годовых." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -546,9 +546,12 @@
   .lm-thanks-email{color:var(--amber-2);font-style:italic;font-weight:500;word-break:break-all}
   .lm-thanks-p{font-size:14.5px;line-height:1.55;color:#374151;margin:0 0 10px}
   .lm-thanks-p strong{color:var(--ink);font-weight:700}
-  .lm-thanks-cta{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);border:0;border-radius:4px;padding:13px 20px;font:inherit;font-weight:700;font-size:14px;cursor:pointer;margin-top:6px}
+  .lm-thanks-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+  .lm-thanks-cta{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);border:0;border-radius:4px;padding:13px 20px;font:inherit;font-weight:700;font-size:14px;cursor:pointer}
   .lm-thanks-cta:hover{background:var(--amber);color:var(--ink)}
   .lm-thanks-cta .arr{font-family:'Fraunces',serif;font-size:18px}
+  .lm-thanks-dl{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:var(--ink);border:0;border-radius:4px;padding:13px 20px;font:inherit;font-weight:700;font-size:14px;cursor:pointer}
+  .lm-thanks-dl:hover{background:#c97a30}
 
   .lm-foot{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;color:var(--muted);line-height:1.5}
 
@@ -556,6 +559,8 @@
   .news-form{display:flex;flex-direction:column;gap:0;position:relative}
   .news-thanks{font-size:13px;line-height:1.5;color:#a8b1c2;padding:12px 14px;border-radius:4px;background:rgba(255,255,255,.04);border-left:2px solid var(--green)}
   .news-thanks strong{color:#fff;font-weight:700}
+  .news-thanks-dl{background:transparent;border:0;padding:0;color:var(--amber);font:inherit;font-size:inherit;text-decoration:underline;cursor:pointer}
+  .news-thanks-dl:hover{color:#fff}
 
   @media (max-width:1100px){
     .lm-grid{grid-template-columns:1fr;gap:36px}
@@ -629,7 +634,7 @@
       </h1>
 
       <p class="hero-lede">
-        Работаем по <strong>44-ФЗ, 223-ФЗ, 615-ПП</strong> и коммерческим закупкам. <strong>Валютные, таможенные</strong> гарантии и <strong>в пользу ФНС</strong>. 47 аккредитованных банков. Без депозита, без открытия счёта, полностью онлайн.
+        Работаем по <strong>44-ФЗ, 223-ФЗ, 615-ПП</strong>, коммерческим закупкам и <strong>таможенным</strong> гарантиям. 47 аккредитованных банков. Без депозита, без открытия счёта, полностью онлайн.
       </p>
 
       <div class="hero-num">
@@ -657,7 +662,7 @@
         <span><span class="tk">✓</span> Предодобрение от 3 минут</span>
         <span><span class="tk">✓</span> Опыт исполнения не нужен</span>
         <span><span class="tk">✓</span> Оплата от третьих лиц</span>
-        <span><span class="tk">✓</span> Без поручительства <small style="color:var(--muted);font-weight:400" title="Бывают банки, готовые работать без поручительства — подбираем индивидуально">?</small></span>
+        <span><span class="tk">✓</span> Без поручительства</span>
         <span><span class="tk">✓</span> <strong>0 ₽</strong> услуги брокера</span>
       </div>
 
@@ -795,31 +800,19 @@
         <a class="more" href="it.html">Подробнее</a>
       </div>
       <div class="dir">
-        <div class="dir-num">04 / Валюта</div>
-        <h3>Валютные закупки</h3>
-        <p>БГ для импортных контрактов и валютных тендеров. Работаем с банками-агентами валютного контроля.</p>
-        <a class="more">Подробнее</a>
-      </div>
-      <div class="dir">
-        <div class="dir-num">05 / ВЭД</div>
+        <div class="dir-num">04 / ВЭД</div>
         <h3>Таможенные гарантии</h3>
         <p>Обеспечение уплаты таможенных платежей. БГ для участников ВЭД и таможенных представителей.</p>
         <a class="more" href="tamozhenaya.html">Подробнее</a>
       </div>
       <div class="dir">
-        <div class="dir-num">06 / ФНС</div>
-        <h3>В пользу ФНС</h3>
-        <p>Обеспечение уплаты НДС, акцизов, возмещения. Принимаем оплату от третьих лиц.</p>
-        <a class="more">Подробнее</a>
-      </div>
-      <div class="dir">
-        <div class="dir-num">07 / Прочее</div>
+        <div class="dir-num">05 / Прочее</div>
         <h3>Прочие закупки</h3>
         <p>Питание, клининг, охрана, озеленение, видеонаблюдение и ещё 30+ направлений.</p>
         <a class="more" href="#form">Запросить расчёт</a>
       </div>
       <div class="dir" style="background:var(--ink);color:var(--paper)">
-        <div class="dir-num" style="color:#a8b1c2">08 / Своё</div>
+        <div class="dir-num" style="color:#a8b1c2">06 / Своё</div>
         <h3 style="color:var(--paper)">Не нашли свою нишу?</h3>
         <p style="color:#a8b1c2">Напишите параметры тендера — посчитаем стоимость и подберём банк за 15 минут.</p>
         <a class="more" href="#form" style="color:var(--amber);border-bottom-color:var(--amber)">Написать нам</a>
@@ -1220,10 +1213,12 @@
         </form>
         <div class="lm-thanks" id="lmThanksMain" hidden>
           <div class="lm-thanks-i">✓</div>
-          <h4 class="lm-thanks-h">Чек-лист отправлен на <span class="lm-thanks-email"></span></h4>
-          <p class="lm-thanks-p">Проверьте почту в течение 1–2 минут. Не пришло — посмотрите в «Спам» и добавьте <strong>modus@modusbg-nn.ru</strong> в адресную книгу.</p>
-          <p class="lm-thanks-p">Хотите консультацию прямо сейчас?</p>
-          <button type="button" class="lm-thanks-cta" data-open="calc">Заказать звонок <span class="arr">→</span></button>
+          <h4 class="lm-thanks-h">Чек-лист скачивается на ваш компьютер</h4>
+          <p class="lm-thanks-p">Если файл не загрузился автоматически, нажмите кнопку ниже. Email <strong class="lm-thanks-email"></strong> сохранили — продублируем чек-лист письмом, чтобы вы могли вернуться к нему позже.</p>
+          <div class="lm-thanks-actions">
+            <button type="button" class="lm-thanks-dl" data-action="download-checklist">↓ Скачать ещё раз</button>
+            <button type="button" class="lm-thanks-cta" data-open="calc">Заказать звонок <span class="arr">→</span></button>
+          </div>
         </div>
         <div class="lm-foot">PDF · 5 страниц · 53 КБ. Email — только для отправки чек-листа и одного follow-up в течение недели. Без рассылки.</div>
       </div>
@@ -1505,7 +1500,7 @@
       </details>
       <details class="faq">
         <summary><span>По каким законам вы работаете?</span><span class="pl"></span></summary>
-        <div class="ans">44-ФЗ, 223-ФЗ, 615-ПП и коммерческие закупки. Также — валютные закупки, таможенные гарантии и гарантии в пользу ФНС.</div>
+        <div class="ans">44-ФЗ, 223-ФЗ, 615-ПП и коммерческие закупки. Также — таможенные гарантии для участников ВЭД.</div>
       </details>
       <details class="faq">
         <summary><span>А если у меня уже есть предложение от моего банка?</span><span class="pl"></span></summary>
@@ -1627,7 +1622,7 @@
         </label>
       </form>
       <div class="news-thanks" id="lmThanksFooter" hidden>
-        <strong>✓ Готово.</strong> Отправили чек-лист на <span class="news-thanks-email"></span>. Проверьте «Входящие» и «Спам».
+        <strong>✓ Скачивание началось.</strong> Если файл не загрузился — <button type="button" class="news-thanks-dl" data-action="download-checklist">скачать ещё раз</button>. Email <span class="news-thanks-email"></span> сохранили.
       </div>
     </div>
   </div>
@@ -2006,7 +2001,18 @@ recalc();
 })();
 
 // ─────── Lead-magnet (checklist) — demo handler ───────
-// Backend wiring: see modus-handoff/instrukciya-cheklist-leadmagnet.md
+// Triggers actual PDF download + swaps form for thank-you block.
+// Backend wiring (CRM, email follow-up, TG notifications):
+// see modus-handoff/leadmagnet/instrukciya-cheklist-leadmagnet.md
+function modusTriggerChecklistDownload(){
+  const a = document.createElement('a');
+  a.href = '/checklist.pdf';
+  a.download = 'Чек-лист — Модус.pdf';
+  a.style.display = 'none';
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => document.body.removeChild(a), 100);
+}
 window.modusLeadMagnet = function(event, form){
   event.preventDefault();
   // Honeypot: bots fill this hidden field, real users don't see it
@@ -2031,6 +2037,12 @@ window.modusLeadMagnet = function(event, form){
     if (span) span.textContent = email;
     form.style.display = 'none';
     thanks.hidden = false;
+    // Wire "Скачать ещё раз" buttons (idempotent)
+    thanks.querySelectorAll('[data-action="download-checklist"]').forEach(btn => {
+      if (btn._wired) return;
+      btn._wired = true;
+      btn.addEventListener('click', modusTriggerChecklistDownload);
+    });
     // Wire "Заказать звонок" → opens calc modal (only once per CTA)
     thanks.querySelectorAll('[data-open="calc"]').forEach(btn => {
       if (btn._wired) return;
@@ -2040,10 +2052,9 @@ window.modusLeadMagnet = function(event, form){
         if (trigger) trigger.click();
       });
     });
-  } else {
-    alert('Чек-лист отправлен на ' + email);
-    form.reset();
   }
+  // Trigger the actual file download
+  modusTriggerChecklistDownload();
   return false;
 };
 </script>
